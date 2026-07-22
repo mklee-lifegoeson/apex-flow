@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>런드리고 VOC 分析보고서 7월3주차</title>
+<style>
+  body{font-family:'Apple SD Gothic Neo',AppleGothic,'Malgun Gothic',sans-serif;background:#F5F7FA;margin:0;padding:16px;color:#1A1A2E}
+  .wrap{max-width:880px;margin:0 auto}
+  .hdr{background:linear-gradient(135deg,#1565C0,#0D47A1);color:#fff;border-radius:12px;padding:20px 24px;margin-bottom:16px}
+  .hdr h1{margin:0 0 4px;font-size:20px;font-weight:700}
+  .hdr p{margin:0;font-size:12px;opacity:.8}
+  .badge{display:inline-block;background:rgba(255,255,255,.18);border-radius:20px;padding:3px 10px;font-size:11px;margin-top:8px}
+  .badge-ok{background:rgba(76,175,80,.35)}
+  .badge-warn{background:rgba(255,167,38,.35)}
+  .kpi-row{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+  .kpi{flex:1;min-width:140px;background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+  .kpi .lbl{font-size:11px;color:#666;margin-bottom:4px}
+  .kpi .val{font-size:26px;font-weight:700;color:#1565C0}
+  .kpi .sub{font-size:11px;color:#888;margin-top:2px}
+  .section-group{background:#fff;border-radius:12px;padding:4px 16px 16px;margin-bottom:14px;box-shadow:0 1px 6px rgba(0,0,0,.09)}
+  .section-group-title{font-size:15px;font-weight:700;color:#1A1A2E;padding:14px 4px 8px;border-bottom:2px solid #1565C0;margin-bottom:12px}
+  .card{background:#F8FAFF;border-radius:10px;padding:16px 20px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .card-plain{background:#fff;border-radius:10px;padding:16px 20px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+  .card h2,.card-plain h2{font-size:14px;font-weight:700;color:#1A1A2E;margin:0 0 12px;border-left:3px solid #1565C0;padding-left:8px}
+  .card h3,.card-plain h3{font-size:13px;font-weight:700;color:#333;margin:16px 0 8px;padding:6px 10px;background:#EEF2FF;border-radius:6px}
+  table{width:100%;border-collapse:collapse;font-size:12px}
+  th{background:#EEF2FF;padding:6px 8px;text-align:center;font-weight:600;color:#333}
+  td{padding:5px 8px;text-align:center;border-bottom:1px solid #F0F0F0}
+  td.left{text-align:left}
+  td.bold{font-weight:700}
+  .chip{display:inline-block;border-radius:10px;padding:2px 7px;font-size:10px;font-weight:600}
+  .chip-green{background:#E8F5E9;color:#2E7D32}
+  .chip-red{background:#FFEBEE;color:#C62828}
+  .chip-yellow{background:#FFFDE7;color:#F57F17}
+  .chip-gray{background:#F5F5F5;color:#757575}
+  .note{font-size:11px;color:#555;background:#F8F9FA;border-left:3px solid #90CAF9;padding:8px 10px;border-radius:0 6px 6px 0;margin:8px 0}
+  .note-warn{border-left-color:#FFB74D;background:#FFFDE7}
+  svg text{font-family:'Apple SD Gothic Neo',AppleGothic,'Malgun Gothic',sans-serif}
+  .card-monthly{background:#EDF7F1;border-radius:10px;padding:16px 20px;margin-bottom:12px;border:2px solid #81C784;box-shadow:0 2px 6px rgba(46,125,50,.12)}
+  .card-monthly h2{font-size:14px;font-weight:700;color:#1B5E20;margin:0 0 12px;border-left:3px solid #2E7D32;padding-left:8px}
+  .monthly-block{background:#EDF7F1;border:2px solid #81C784;border-radius:8px;padding:14px 16px;margin-top:18px}
+  .monthly-block h3{font-size:13px;font-weight:700;color:#1B5E20;margin:0 0 10px;padding:6px 10px;background:#C8E6C9;border-radius:6px;border-left:3px solid #2E7D32}
+  .monthly-tag{display:inline-block;font-size:10px;font-weight:700;color:#fff;background:#2E7D32;border-radius:10px;padding:2px 9px;white-space:nowrap;vertical-align:middle;margin-left:6px}
+</style>
+</head>
+<body><div class="wrap">
+<div class="hdr">
+  <h1>🧺 런드리고 VOC 分析보고서</h1>
+  <p>기간: 2026.07.13 ~ 07.19 &nbsp;|&nbsp; South(군포) + East(성수) 합산</p>
+  <span class="badge badge-warn">총VOC ▲111건(+6.2%) — VOC율 9.90%. 2주 만에 반등, 변형·오염 증가 주의</span>
+  <span class="badge badge-warn">💨 건조/냄새 43건(▲5건) 상승 주의 — 🧺 변형 78건(▲14건) 동반 증가</span>
+</div>
+<div class="kpi-row">
+  <div class="kpi"><div class="lbl">총 VOC 건수</div><div class="val">1,915건</div>
+    <div class="sub">전주 대비 <span style="color:#C62828">▲111건(+6.2%)</span></div></div>
+  <div class="kpi"><div class="lbl">VOC율</div><div class="val">9.90%</div>
+    <div class="sub">수거건수 19,334건</div></div>
+  <div class="kpi"><div class="lbl">South (군포)</div><div class="val">1,171건</div>
+    <div class="sub">전체의 61.1%</div></div>
+  <div class="kpi"><div class="lbl">East (성수)</div><div class="val">744건</div>
+    <div class="sub">전체의 38.9%</div></div>
+</div>
+
+<div class="section-group">
+<div class="section-group-title">📊 전체 VOC 추이</div>
+<div class="card">
+<h2>📈 7주 추이 (6월2주~7월3주)</h2>
+<p class="note">⚠️ <strong>총VOC 1,915건(▲111건, +6.2%)</strong>: 7월2주(1,804건) 저점 이후 반등. 변형(▲14건)·오염(▲6건)·건조/냄새(▲5건) 동반 상승.<br>
+📉 <strong>결제/요금제 537건(▲49건)</strong>: 7월1주(599건) 수준으로 재증가. 안심케어(▲19건)도 주의 필요.</p>
+<table>
+<tr><th>구분</th><th style="background:#C62828;color:#fff">6월2주</th><th>6월3주</th><th>6월4주</th><th>7월1주</th><th>7월2주</th><th style="background:#1565C0;color:#fff">7월3주 ✅</th></tr>
+<tr><td class="left">총VOC</td><td style="color:#C62828;font-weight:700">2,153</td><td>1,953</td><td>2,026</td><td>1,996</td><td>1,804</td><td style="color:#1565C0;font-weight:700">1,915</td></tr>
+<tr style="background:#F8F9FA"><td class="left">VOC율</td><td style="color:#C62828;font-weight:700">11.05%</td><td>9.96%</td><td>10.69%</td><td>10.44%</td><td>9.72%</td><td style="color:#1565C0;font-weight:700">9.90%</td></tr>
+<tr><td class="left">수거건수</td><td>19,489</td><td>19,616</td><td>18,952</td><td>19,122</td><td>18,554</td><td>19,334</td></tr>
+</table>
+<svg viewBox="0 0 660 180" width="100%" style="margin-top:10px">
+  <line x1="65" y1="37" x2="625" y2="37" stroke="#EEE" stroke-width="1"/>
+  <text x="60" y="40" font-size="9" fill="#999" text-anchor="end">2,500</text>
+  <line x1="65" y1="77" x2="625" y2="77" stroke="#EEE" stroke-width="1"/>
+  <text x="60" y="80" font-size="9" fill="#999" text-anchor="end">1,500</text>
+  <line x1="65" y1="117" x2="625" y2="117" stroke="#EEE" stroke-width="1"/>
+  <text x="60" y="120" font-size="9" fill="#999" text-anchor="end">500</text>
+  <line x1="65" y1="157" x2="625" y2="157" stroke="#CCC" stroke-width="1"/>
+  <text x="60" y="160" font-size="9" fill="#999" text-anchor="end">0</text>
+  <rect x="85" y="35" width="65" height="105.3" fill="#FFEBEE" opacity="0.5" rx="2"/>
+  <rect x="85" y="53.7" width="65" height="103.3" fill="#C62828" rx="3"/>
+  <rect x="178" y="63.3" width="65" height="93.7" fill="#90A4AE" rx="3"/>
+  <rect x="271" y="59.8" width="65" height="97.2" fill="#90A4AE" rx="3"/>
+  <rect x="364" y="61.2" width="65" height="95.8" fill="#90A4AE" rx="3"/>
+  <rect x="457" y="70.4" width="65" height="86.6" fill="#78909C" rx="3"/>
+  <rect x="550" y="65.1" width="65" height="91.9" fill="#1565C0" rx="3"/>
+  <text x="117" y="49.7" font-size="10" fill="#C62828" text-anchor="middle" font-weight="700">2,153</text>
+  <text x="210" y="59.3" font-size="9" fill="#555" text-anchor="middle" font-weight="400">1,953</text>
+  <text x="303" y="55.8" font-size="9" fill="#555" text-anchor="middle" font-weight="400">2,026</text>
+  <text x="396" y="57.2" font-size="9" fill="#555" text-anchor="middle" font-weight="400">1,996</text>
+  <text x="489" y="66.4" font-size="9" fill="#555" text-anchor="middle" font-weight="400">1,804</text>
+  <text x="582" y="61.1" font-size="10" fill="#1565C0" text-anchor="middle" font-weight="700">1,915</text>
+  <text x="117" y="172" font-size="9" fill="#C62828" text-anchor="middle" font-weight="700">6월2주</text>
+  <text x="210" y="172" font-size="9" fill="#666" text-anchor="middle" font-weight="400">6월3주</text>
+  <text x="303" y="172" font-size="9" fill="#666" text-anchor="middle" font-weight="400">6월4주</text>
+  <text x="396" y="172" font-size="9" fill="#666" text-anchor="middle" font-weight="400">7월1주</text>
+  <text x="489" y="172" font-size="9" fill="#666" text-anchor="middle" font-weight="400">7월2주</text>
+  <text x="582" y="172" font-size="9" fill="#1565C0" text-anchor="middle" font-weight="700">7월3주</text>
+</svg>
+<svg viewBox="0 0 660 100" width="100%" style="margin-top:2px">
+  <line x1="65" y1="18" x2="625" y2="18" stroke="#EEE" stroke-width="1"/>
+  <text x="60" y="21" font-size="9" fill="#999" text-anchor="end">16%</text>
+  <line x1="65" y1="50" x2="625" y2="50" stroke="#EEE" stroke-width="1"/>
+  <text x="60" y="53" font-size="9" fill="#999" text-anchor="end">8%</text>
+  <line x1="65" y1="82" x2="625" y2="82" stroke="#CCC" stroke-width="1"/>
+  <text x="60" y="85" font-size="9" fill="#999" text-anchor="end">0%</text>
+  <polyline fill="none" stroke="#1565C0" stroke-width="2" points="117,37.8 210,42.2 303,39.2 396,40.2 489,43.1 582,42.4"/>
+  <circle cx="117" cy="37.8" r="4" fill="#C62828"/>
+  <circle cx="210" cy="42.2" r="3" fill="#1565C0"/>
+  <circle cx="303" cy="39.2" r="3" fill="#1565C0"/>
+  <circle cx="396" cy="40.2" r="3" fill="#1565C0"/>
+  <circle cx="489" cy="43.1" r="3" fill="#1565C0"/>
+  <circle cx="582" cy="42.4" r="4" fill="#1565C0"/>
+  <text x="117" y="31.8" font-size="10" fill="#C62828" text-anchor="middle" font-weight="700">11.05%</text>
+  <text x="210" y="36.2" font-size="9" fill="#555" text-anchor="middle" font-weight="normal">9.96%</text>
+  <text x="303" y="33.2" font-size="9" fill="#555" text-anchor="middle" font-weight="normal">10.69%</text>
+  <text x="396" y="34.2" font-size="9" fill="#555" text-anchor="middle" font-weight="normal">10.44%</text>
+  <text x="489" y="37.1" font-size="9" fill="#555" text-anchor="middle" font-weight="normal">9.72%</text>
+  <text x="582" y="36.4" font-size="10" fill="#1565C0" text-anchor="middle" font-weight="700">9.90%</text>
+  <text x="10" y="14" font-size="10" fill="#555" font-weight="600">VOC율 추이 (%)</text>
+</svg>
+<div style="font-size:10px;color:#888;margin-top:4px">
+  <span style="display:inline-block;width:10px;height:10px;background:#C62828;border-radius:2px;vertical-align:middle;margin-right:3px"></span>6월2주(기간 최고)&nbsp;
+  <span style="display:inline-block;width:10px;height:10px;background:#1565C0;border-radius:2px;vertical-align:middle;margin-right:3px"></span>7월3주(당주)
+</div>
+</div>
+
+<div class="card-monthly">
+<h2>📅 월별 현황 (2026년 1월~7월) <span class="monthly-tag">연간 흐름</span></h2>
+<p class="note">※ 월별 = 해당 월 주차 라벨 합산(달력 기준 아님) / South+East 합산 / 7월 = 1~3주차 누적</p>
+<table>
+<tr><th>월</th><th>1월</th><th>2월</th><th>3월</th><th>4월</th><th>5월</th><th>6월</th><th>7월</th></tr>
+<tr><td class="left bold">총VOC</td><td>9,751</td><td>7,838</td><td>9,380</td><td>14,331</td><td>9,550</td><td>8,043</td><td>5,715</td></tr>
+<tr style="background:#F8F9FA"><td class="left bold">수거건수</td><td>98,023</td><td>73,481</td><td>86,811</td><td>113,959</td><td>86,998</td><td>77,834</td><td>57,010</td></tr>
+<tr><td class="left bold">VOC율</td><td>9.9%</td><td>10.7%</td><td>10.8%</td><td>12.6%</td><td>11.0%</td><td>10.3%</td><td>10.0%</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 대분류별 분석 -->
+<div class="card-plain">
+<h2>📊 대분류별 분析 (7월3주차)</h2>
+<h3>대분류별 건수 (합계 1,915건)</h3>
+<table><tr><th>카테고리</th><th>건수</th><th>비중</th><th>전주 대비</th><th>상태</th></tr>
+<tr><td class="left">💳 결제/요금제</td><td class="bold">537</td><td>28.0%</td><td><span style="color:#C62828">▲49</span></td><td><span class="chip chip-red">🔴 증가 주의</span></td></tr>
+<tr style="background:#FAFAFA"><td class="left">🚚 수거/배송</td><td class="bold">462</td><td>24.1%</td><td><span style="color:#2E7D32">▼6</span></td><td><span class="chip chip-green">✅ 개선</span></td></tr>
+<tr><td class="left">🛡️ 안심케어</td><td class="bold">91</td><td>4.8%</td><td><span style="color:#C62828">▲19</span></td><td><span class="chip chip-red">🔴 증가 주의</span></td></tr>
+<tr style="background:#FAFAFA"><td class="left">🧺 변형</td><td class="bold">78</td><td>4.1%</td><td><span style="color:#C62828">▲14</span></td><td><span class="chip chip-red">🔴 증가 주의</span></td></tr>
+<tr><td class="left">🧼 오염</td><td class="bold">58</td><td>3.0%</td><td><span style="color:#C62828">▲6</span></td><td><span class="chip chip-yellow">⚠️ 소폭 증가</span></td></tr>
+<tr style="background:#FAFAFA"><td class="left">💨 건조/냄새</td><td class="bold">43</td><td>2.2%</td><td><span style="color:#C62828">▲5</span></td><td><span class="chip chip-yellow">⚠️ 소폭 증가</span></td></tr>
+<tr><td class="left">👔 다림질</td><td class="bold">25</td><td>1.3%</td><td><span style="color:#2E7D32">▼4</span></td><td><span class="chip chip-green">✅ 개선</span></td></tr>
+<tr style="background:#FAFAFA"><td class="left">🧶 보풀</td><td class="bold">5</td><td>0.3%</td><td><span style="color:#2E7D32">▼2</span></td><td><span class="chip chip-green">✅ 개선</span></td></tr>
+<tr><td class="left">👤 회원/기타</td><td class="bold">71</td><td>3.7%</td><td><span style="color:#2E7D32">▼31</span></td><td><span class="chip chip-green">✅ 개선</span></td></tr>
+<tr style="background:#EEF2FF"><td class="left bold">합계</td><td class="bold">1,915</td><td>100%</td><td><span style="color:#C62828">▲111</span></td><td><span class="chip chip-yellow">⚠️ 전체 증가</span></td></tr>
+</table>
+<h3>주간 추이 비교표 (6주)</h3>
+<table><tr><th>카테고리</th><th style="background:#C62828;color:#fff">6월2주</th><th>6월3주</th><th>6월4주</th><th>7월1주</th><th>7월2주</th><th style="background:#1565C0;color:#fff">7월3주</th><th>증감</th></tr>
+<tr><td class="left">💳 결제/요금제</td><td style="color:#C62828">669</td><td>574</td><td>558</td><td>599</td><td>488</td><td class="bold" style="color:#1565C0">537</td><td><span style="color:#C62828">▲49</span></td></tr>
+<tr style="background:#FAFAFA"><td class="left">🚚 수거/배송</td><td style="color:#C62828">495</td><td>477</td><td>431</td><td>459</td><td>468</td><td class="bold" style="color:#1565C0">462</td><td><span style="color:#2E7D32">▼6</span></td></tr>
+<tr><td class="left">🛡️ 안심케어</td><td style="color:#C62828">136</td><td>138</td><td>119</td><td>100</td><td>72</td><td class="bold" style="color:#1565C0">91</td><td><span style="color:#C62828">▲19</span></td></tr>
+<tr style="background:#FAFAFA"><td class="left">🧺 변형</td><td style="color:#C62828">84</td><td>58</td><td>89</td><td>71</td><td>64</td><td class="bold" style="color:#1565C0">78</td><td><span style="color:#C62828">▲14</span></td></tr>
+<tr><td class="left">🧼 오염</td><td style="color:#C62828">69</td><td>44</td><td>59</td><td>71</td><td>52</td><td class="bold" style="color:#1565C0">58</td><td><span style="color:#C62828">▲6</span></td></tr>
+<tr style="background:#FAFAFA"><td class="left">💨 건조/냄새</td><td style="color:#C62828">13</td><td>14</td><td>22</td><td>24</td><td>38</td><td class="bold" style="color:#1565C0">43</td><td><span style="color:#C62828">▲5</span></td></tr>
+<tr><td class="left">👔 다림질</td><td style="color:#C62828">28</td><td>26</td><td>40</td><td>21</td><td>29</td><td class="bold" style="color:#1565C0">25</td><td><span style="color:#2E7D32">▼4</span></td></tr>
+<tr style="background:#FAFAFA"><td class="left">🧶 보풀</td><td style="color:#C62828">12</td><td>10</td><td>9</td><td>15</td><td>7</td><td class="bold" style="color:#1565C0">5</td><td><span style="color:#2E7D32">▼2</span></td></tr>
+<tr><td class="left">👤 회원/기타</td><td style="color:#C62828">67</td><td>50</td><td>73</td><td>96</td><td>102</td><td class="bold" style="color:#1565C0">71</td><td><span style="color:#2E7D32">▼31</span></td></tr>
+</table>
+<div class="monthly-block">
+<h3>📅 월별 현황 (2026년 1월~7월) <span class="monthly-tag">연간 흐름</span></h3>
+<p class="note">※ 각 셀 = 건수 / (괄호) 총VOC 대비 비중. 월별 = 주차 라벨 합산 기준.</p>
+<table>
+<tr><th>구분</th><th>1월</th><th>2월</th><th>3월</th><th>4월</th><th>5월</th><th>6월</th><th>7월</th></tr>
+<tr><td class="left">💳 결제/요금제</td><td>2,628<br><span style="font-size:10px;color:#888">(27.0%)</span></td><td>2,184<br><span style="font-size:10px;color:#888">(27.9%)</span></td><td>2,554<br><span style="font-size:10px;color:#888">(27.2%)</span></td><td>3,723<br><span style="font-size:10px;color:#888">(26.0%)</span></td><td>2,708<br><span style="font-size:10px;color:#888">(28.4%)</span></td><td>2,398<br><span style="font-size:10px;color:#888">(29.8%)</span></td><td>1,600<br><span style="font-size:10px;color:#888">(28.0%)</span></td></tr>
+<tr style="background:#FAFAFA"><td class="left">🚚 수거/배송</td><td>2,196<br><span style="font-size:10px;color:#888">(22.5%)</span></td><td>2,014<br><span style="font-size:10px;color:#888">(25.7%)</span></td><td>2,345<br><span style="font-size:10px;color:#888">(25.0%)</span></td><td>4,213<br><span style="font-size:10px;color:#888">(29.4%)</span></td><td>2,365<br><span style="font-size:10px;color:#888">(24.8%)</span></td><td>1,968<br><span style="font-size:10px;color:#888">(24.5%)</span></td><td>1,383<br><span style="font-size:10px;color:#888">(24.2%)</span></td></tr>
+<tr><td class="left">🛡️ 안심케어</td><td>675<br><span style="font-size:10px;color:#888">(6.9%)</span></td><td>437<br><span style="font-size:10px;color:#888">(5.6%)</span></td><td>574<br><span style="font-size:10px;color:#888">(6.1%)</span></td><td>846<br><span style="font-size:10px;color:#888">(5.9%)</span></td><td>642<br><span style="font-size:10px;color:#888">(6.7%)</span></td><td>543<br><span style="font-size:10px;color:#888">(6.8%)</span></td><td>264<br><span style="font-size:10px;color:#888">(4.6%)</span></td></tr>
+<tr style="background:#FAFAFA"><td class="left">🧺 변형</td><td>573<br><span style="font-size:10px;color:#888">(5.9%)</span></td><td>367<br><span style="font-size:10px;color:#888">(4.7%)</span></td><td>408<br><span style="font-size:10px;color:#888">(4.3%)</span></td><td>509<br><span style="font-size:10px;color:#888">(3.6%)</span></td><td>386<br><span style="font-size:10px;color:#888">(4.0%)</span></td><td>298<br><span style="font-size:10px;color:#888">(3.7%)</span></td><td>211<br><span style="font-size:10px;color:#888">(3.7%)</span></td></tr>
+<tr><td class="left">🧼 오염</td><td>757<br><span style="font-size:10px;color:#888">(7.8%)</span></td><td>545<br><span style="font-size:10px;color:#888">(7.0%)</span></td><td>481<br><span style="font-size:10px;color:#888">(5.1%)</span></td><td>670<br><span style="font-size:10px;color:#888">(4.7%)</span></td><td>395<br><span style="font-size:10px;color:#888">(4.1%)</span></td><td>251<br><span style="font-size:10px;color:#888">(3.1%)</span></td><td>182<br><span style="font-size:10px;color:#888">(3.2%)</span></td></tr>
+<tr style="background:#FAFAFA"><td class="left">👤 회원/기타</td><td>409<br><span style="font-size:10px;color:#888">(4.2%)</span></td><td>380<br><span style="font-size:10px;color:#888">(4.8%)</span></td><td>467<br><span style="font-size:10px;color:#888">(5.0%)</span></td><td>449<br><span style="font-size:10px;color:#888">(3.1%)</span></td><td>255<br><span style="font-size:10px;color:#888">(2.7%)</span></td><td>247<br><span style="font-size:10px;color:#888">(3.1%)</span></td><td>269<br><span style="font-size:10px;color:#888">(4.7%)</span></td></tr>
+<tr><td class="left">👔 다림질</td><td>98<br><span style="font-size:10px;color:#888">(1.0%)</span></td><td>77<br><span style="font-size:10px;color:#888">(1.0%)</span></td><td>97<br><span style="font-size:10px;color:#888">(1.0%)</span></td><td>196<br><span style="font-size:10px;color:#888">(1.4%)</span></td><td>133<br><span style="font-size:10px;color:#888">(1.4%)</span></td><td>137<br><span style="font-size:10px;color:#888">(1.7%)</span></td><td>74<br><span style="font-size:10px;color:#888">(1.3%)</span></td></tr>
+<tr style="background:#FAFAFA"><td class="left">🧶 보풀</td><td>202<br><span style="font-size:10px;color:#888">(2.1%)</span></td><td>106<br><span style="font-size:10px;color:#888">(1.4%)</span></td><td>100<br><span style="font-size:10px;color:#888">(1.1%)</span></td><td>123<br><span style="font-size:10px;color:#888">(0.9%)</span></td><td>58<br><span style="font-size:10px;color:#888">(0.6%)</span></td><td>35<br><span style="font-size:10px;color:#888">(0.4%)</span></td><td>26<br><span style="font-size:10px;color:#888">(0.5%)</span></td></tr>
+<tr><td class="left">💨 건조/냄새</td><td>41<br><span style="font-size:10px;color:#888">(0.4%)</span></td><td>29<br><span style="font-size:10px;color:#888">(0.4%)</span></td><td>25<br><span style="font-size:10px;color:#888">(0.3%)</span></td><td>41<br><span style="font-size:10px;color:#888">(0.3%)</span></td><td>52<br><span style="font-size:10px;color:#888">(0.5%)</span></td><td>68<br><span style="font-size:10px;color:#888">(0.8%)</span></td><td>100<br><span style="font-size:10px;color:#888">(1.7%)</span></td></tr>
+<tr style="background:#EEF2FF"><td class="left bold">합계</td><td class="bold">9,751</td><td class="bold">7,838</td><td class="bold">9,380</td><td class="bold">14,331</td><td class="bold">9,550</td><td class="bold">8,043</td><td class="bold">5,715</td></tr>
+</table>
+<svg viewBox="0 0 660 230" width="100%" style="margin-top:12px">
+  <line x1="65" y1="185.0" x2="610" y2="185.0" stroke="#CCC" stroke-width="1"/>
+  <text x="59" y="188.0" font-size="9" fill="#999" text-anchor="end">0</text>
+  <line x1="65" y1="152.0" x2="610" y2="152.0" stroke="#EEE" stroke-width="1"/>
+  <text x="59" y="155.0" font-size="9" fill="#999" text-anchor="end">1,000</text>
+  <line x1="65" y1="119.0" x2="610" y2="119.0" stroke="#EEE" stroke-width="1"/>
+  <text x="59" y="122.0" font-size="9" fill="#999" text-anchor="end">2,000</text>
+  <line x1="65" y1="86.0" x2="610" y2="86.0" stroke="#EEE" stroke-width="1"/>
+  <text x="59" y="89.0" font-size="9" fill="#999" text-anchor="end">3,000</text>
+  <line x1="65" y1="53.0" x2="610" y2="53.0" stroke="#EEE" stroke-width="1"/>
+  <text x="59" y="56.0" font-size="9" fill="#999" text-anchor="end">4,000</text>
+  <polyline fill="none" stroke="#1565C0" stroke-width="2.2" points="95,98.3 178,112.9 261,100.7 344,62.1 427,95.6 510,105.9 593,132.2" stroke-linejoin="round"/>
+  <circle cx="95" cy="98.3" r="4" fill="#1565C0" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="178" cy="112.9" r="4" fill="#1565C0" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="261" cy="100.7" r="4" fill="#1565C0" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="344" cy="62.1" r="4" fill="#1565C0" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="427" cy="95.6" r="4" fill="#1565C0" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="510" cy="105.9" r="4" fill="#1565C0" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="593" cy="132.2" r="4" fill="#1565C0" stroke="#fff" stroke-width="1.5"/>
+  <text x="601" y="136.2" font-size="9" fill="#1565C0" font-weight="700">1,600</text>
+  <text x="344" y="53.1" font-size="9" fill="#1565C0" text-anchor="middle" font-weight="700">3,723</text>
+  <polyline fill="none" stroke="#2E7D32" stroke-width="2.2" points="95,112.5 178,118.5 261,107.6 344,46.0 427,107.0 510,120.1 593,139.4" stroke-linejoin="round"/>
+  <circle cx="95" cy="112.5" r="4" fill="#2E7D32" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="178" cy="118.5" r="4" fill="#2E7D32" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="261" cy="107.6" r="4" fill="#2E7D32" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="344" cy="46.0" r="4" fill="#2E7D32" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="427" cy="107.0" r="4" fill="#2E7D32" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="510" cy="120.1" r="4" fill="#2E7D32" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="593" cy="139.4" r="4" fill="#2E7D32" stroke="#fff" stroke-width="1.5"/>
+  <text x="601" y="143.4" font-size="9" fill="#2E7D32" font-weight="700">1,383</text>
+  <text x="344" y="37.0" font-size="9" fill="#2E7D32" text-anchor="middle" font-weight="700">4,213</text>
+  <polyline fill="none" stroke="#E65100" stroke-width="2.2" points="95,162.7 178,170.6 261,166.1 344,157.1 427,163.8 510,167.1 593,176.3" stroke-linejoin="round"/>
+  <circle cx="95" cy="162.7" r="4" fill="#E65100" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="178" cy="170.6" r="4" fill="#E65100" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="261" cy="166.1" r="4" fill="#E65100" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="344" cy="157.1" r="4" fill="#E65100" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="427" cy="163.8" r="4" fill="#E65100" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="510" cy="167.1" r="4" fill="#E65100" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="593" cy="176.3" r="4" fill="#E65100" stroke="#fff" stroke-width="1.5"/>
+  <text x="601" y="180.3" font-size="9" fill="#E65100" font-weight="700">264</text>
+  <text x="344" y="148.1" font-size="9" fill="#E65100" text-anchor="middle" font-weight="700">846</text>
+  <polyline fill="none" stroke="#6A1B9A" stroke-width="2.2" points="95,171.5 178,172.5 261,169.6 344,170.2 427,176.6 510,176.8 593,176.1" stroke-linejoin="round"/>
+  <circle cx="95" cy="171.5" r="4" fill="#6A1B9A" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="178" cy="172.5" r="4" fill="#6A1B9A" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="261" cy="169.6" r="4" fill="#6A1B9A" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="344" cy="170.2" r="4" fill="#6A1B9A" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="427" cy="176.6" r="4" fill="#6A1B9A" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="510" cy="176.8" r="4" fill="#6A1B9A" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="593" cy="176.1" r="4" fill="#6A1B9A" stroke="#fff" stroke-width="1.5"/>
+  <text x="601" y="180.1" font-size="9" fill="#6A1B9A" font-weight="700">269</text>
+  <text x="261" y="160.6" font-size="9" fill="#6A1B9A" text-anchor="middle" font-weight="700">467</text>
+  <text x="95" y="201" font-size="10" fill="#555" text-anchor="middle" font-weight="normal">1월</text>
+  <text x="178" y="201" font-size="10" fill="#555" text-anchor="middle" font-weight="normal">2월</text>
+  <text x="261" y="201" font-size="10" fill="#555" text-anchor="middle" font-weight="normal">3월</text>
+  <text x="344" y="201" font-size="10" fill="#555" text-anchor="middle" font-weight="normal">4월</text>
+  <text x="427" y="201" font-size="10" fill="#555" text-anchor="middle" font-weight="normal">5월</text>
+  <text x="510" y="201" font-size="10" fill="#555" text-anchor="middle" font-weight="normal">6월</text>
+  <text x="593" y="201" font-size="10" fill="#1565C0" text-anchor="middle" font-weight="600">7월</text>
+  <rect x="65" y="210" width="10" height="10" fill="#1565C0" rx="2"/>
+  <text x="78" y="219" font-size="10" fill="#333">💳 결제/요금제</text>
+  <rect x="213" y="210" width="10" height="10" fill="#2E7D32" rx="2"/>
+  <text x="226" y="219" font-size="10" fill="#333">🚚 수거/배송</text>
+  <rect x="361" y="210" width="10" height="10" fill="#E65100" rx="2"/>
+  <text x="374" y="219" font-size="10" fill="#333">🛡️ 안심케어</text>
+  <rect x="509" y="210" width="10" height="10" fill="#6A1B9A" rx="2"/>
+  <text x="522" y="219" font-size="10" fill="#333">👤 회원/기타</text>
+</svg>
+</div>
+</div>
+<div class="card-plain">
+<h2>🧼 세탁품질5대 分析</h2>
+<p class="note note-warn">⚠️ <strong>7월3주차 세탁품질5대 209건(▲19건)</strong>: 전주(190건) 대비 증가. 건조/냄새(▲5)·변형(▲14) 동반 증가. 오염(▲6)·다림질(▼4)·보풀(▼2) 혼재. 건조/냄새 5주 연속 상승세(14→22→24→38→43) 집중 모니터링 필요.</p>
+<h3>주간 추이 (6월2주~7월3주)</h3>
+<table><tr><th>항목</th><th>6월2주</th><th>6월3주</th><th style="background:#E53935;color:#fff">6월4주</th><th>7월1주</th><th>7월2주</th><th style="background:#1565C0;color:#fff">7월3주</th><th>증감</th></tr>
+<tr style="background:#FAFAFA"><td class="left">💨 건조/냄새</td><td>13</td><td>14</td><td style="color:#E53935">22</td><td>24</td><td>38</td><td class="bold" style="color:#1565C0">43</td><td><span style="color:#C62828">▲5</span></td></tr>
+<tr><td class="left">👔 다림질</td><td>28</td><td>26</td><td style="color:#E53935">40</td><td>21</td><td>29</td><td class="bold" style="color:#1565C0">25</td><td><span style="color:#2E7D32">▼4</span></td></tr>
+<tr style="background:#FAFAFA"><td class="left">🧶 보풀</td><td>12</td><td>10</td><td style="color:#E53935">9</td><td>15</td><td>7</td><td class="bold" style="color:#1565C0">5</td><td><span style="color:#2E7D32">▼2</span></td></tr>
+<tr><td class="left">🧺 변형/변색/손상</td><td>84</td><td>58</td><td style="color:#E53935">89</td><td>71</td><td>64</td><td class="bold" style="color:#1565C0">78</td><td><span style="color:#C62828">▲14</span></td></tr>
+<tr style="background:#FAFAFA"><td class="left">🧼 오염 미제거</td><td>69</td><td>44</td><td style="color:#E53935">59</td><td>71</td><td>52</td><td class="bold" style="color:#1565C0">58</td><td><span style="color:#C62828">▲6</span></td></tr>
+<tr style="background:#EEF2FF"><td class="left bold">합계</td><td>206</td><td>152</td><td style="color:#E53935;font-weight:700">219</td><td>202</td><td>190</td><td class="bold" style="color:#1565C0">209</td><td><span style="color:#C62828">▲19</span></td></tr>
+</table>
+<svg viewBox="0 0 660 180" width="100%" style="margin-top:10px">
+  <line x1="65" y1="35" x2="625" y2="35" stroke="#EEE" stroke-width="1"/>
+  <text x="60" y="38" font-size="9" fill="#999" text-anchor="end">300</text>
+  <line x1="65" y1="75" x2="625" y2="75" stroke="#EEE" stroke-width="1"/>
+  <text x="60" y="78" font-size="9" fill="#999" text-anchor="end">200</text>
+  <line x1="65" y1="115" x2="625" y2="115" stroke="#EEE" stroke-width="1"/>
+  <text x="60" y="118" font-size="9" fill="#999" text-anchor="end">100</text>
+  <line x1="65" y1="155" x2="625" y2="155" stroke="#CCC" stroke-width="1"/>
+  <text x="60" y="158" font-size="9" fill="#999" text-anchor="end">0</text>
+  <rect x="271" y="65.4" width="65" height="89.6" fill="#FFEBEE" opacity="0.5" rx="2"/>
+  <rect x="85" y="72.6" width="65" height="82.4" fill="#90A4AE" rx="3"/>
+  <rect x="178" y="94.2" width="65" height="60.8" fill="#90A4AE" rx="3"/>
+  <rect x="271" y="67.4" width="65" height="87.6" fill="#E53935" rx="3"/>
+  <rect x="364" y="74.2" width="65" height="80.8" fill="#90A4AE" rx="3"/>
+  <rect x="457" y="79.0" width="65" height="76.0" fill="#78909C" rx="3"/>
+  <rect x="550" y="71.4" width="65" height="83.6" fill="#1565C0" rx="3"/>
+  <text x="117" y="68.6" font-size="9" fill="#555" text-anchor="middle" font-weight="400">206</text>
+  <text x="210" y="90.2" font-size="9" fill="#555" text-anchor="middle" font-weight="400">152</text>
+  <text x="303" y="63.400000000000006" font-size="10" fill="#E53935" text-anchor="middle" font-weight="700">219</text>
+  <text x="396" y="70.2" font-size="9" fill="#555" text-anchor="middle" font-weight="400">202</text>
+  <text x="489" y="75.0" font-size="9" fill="#555" text-anchor="middle" font-weight="400">190</text>
+  <text x="582" y="67.4" font-size="10" fill="#1565C0" text-anchor="middle" font-weight="700">209</text>
+  <text x="117" y="170" font-size="9" fill="#666" text-anchor="middle" font-weight="400">6월2주</text>
+  <text x="210" y="170" font-size="9" fill="#666" text-anchor="middle" font-weight="400">6월3주</text>
+  <text x="303" y="170" font-size="9" fill="#E53935" text-anchor="middle" font-weight="700">6월4주</text>
+  <text x="396" y="170" font-size="9" fill="#666" text-anchor="middle" font-weight="400">7월1주</text>
+  <text x="489" y="170" font-size="9" fill="#666" text-anchor="middle" font-weight="400">7월2주</text>
+  <text x="582" y="170" font-size="9" fill="#1565C0" text-anchor="middle" font-weight="700">7월3주</text>
+</svg>
+<div class="monthly-block">
+<h3>📅 월별 현황 (2026년 1월~7월) <span class="monthly-tag">연간 흐름</span></h3>
+<p class="note">※ 월별 = 주차 라벨 합산 기준. 7월 = 1~3주차 누적.</p>
+<table>
+<tr><th>구분</th><th>1월</th><th>2월</th><th>3월</th><th>4월</th><th>5월</th><th>6월</th><th>7월</th></tr>
+<tr><td class="left bold">세탁품질5대 합계</td><td class="bold">1,671</td><td class="bold">1,124</td><td class="bold">1,111</td><td class="bold">1,539</td><td class="bold">1,024</td><td class="bold">789</td><td class="bold">593</td></tr>
+<tr style="background:#F8F9FA"><td class="left bold">총VOC 대비 비중</td><td>17.1%</td><td>14.3%</td><td>11.8%</td><td>10.7%</td><td>10.7%</td><td>9.8%</td><td>10.4%</td></tr>
+<tr><td class="left bold">총 주문수 대비 비중</td><td>1.70%</td><td>1.53%</td><td>1.28%</td><td>1.35%</td><td>1.18%</td><td>1.01%</td><td>1.04%</td></tr>
+</table>
+</div>
+</div>
+
+
+<!-- 분실류 분析 -->
+<div class="card-plain">
+<h2>📦 분실류 分析</h2>
+<p class="note">ℹ️ <strong>7월3주차 분실류 합계 79건</strong>(분실 51건, 타인세탁물 28건) — 전주(80건) 대비 ▼1건(1.2%). 분실 <span style="color:#2E7D32">▼16건</span> vs 타인세탁물 <span style="color:#C62828">▲15건</span> 혼재. 집중분析 상세는 아래 소주제 #1 참조.</p>
+<h3>주간 추이 (6주)</h3>
+<table>
+<tr><th>구분</th><th>6월2주</th><th>6월3주</th><th style="background:#C62828;color:#fff">6월4주</th><th>7월1주</th><th>7월2주</th><th style="background:#1565C0;color:#fff">7월3주</th><th>증감</th></tr>
+<tr><td class="left">📦 분실</td><td>68</td><td>72</td><td style="color:#C62828;font-weight:700">83</td><td>73</td><td>67</td><td class="bold" style="color:#1565C0">51</td><td><span style="color:#2E7D32">▼16</span></td></tr>
+<tr style="background:#FAFAFA"><td class="left">🔄 타인세탁물</td><td>19</td><td>21</td><td style="color:#C62828;font-weight:700">27</td><td>20</td><td>13</td><td class="bold" style="color:#1565C0">28</td><td><span style="color:#C62828">▲15</span></td></tr>
+<tr style="background:#EEF2FF"><td class="left bold">합계</td><td>87</td><td>93</td><td style="color:#C62828;font-weight:700">110</td><td>93</td><td>80</td><td class="bold" style="color:#1565C0">79</td><td><span style="color:#2E7D32">▼1</span></td></tr>
+</table>
+<svg viewBox="0 0 660 180" width="100%" style="margin-top:10px">
+  <line x1="65" y1="35" x2="625" y2="35" stroke="#EEE" stroke-width="1"/>
+  <text x="60" y="38" font-size="9" fill="#999" text-anchor="end">150</text>
+  <line x1="65" y1="75" x2="625" y2="75" stroke="#EEE" stroke-width="1"/>
+  <text x="60" y="78" font-size="9" fill="#999" text-anchor="end">100</text>
+  <line x1="65" y1="115" x2="625" y2="115" stroke="#EEE" stroke-width="1"/>
+  <text x="60" y="118" font-size="9" fill="#999" text-anchor="end">50</text>
+  <line x1="65" y1="155" x2="625" y2="155" stroke="#CCC" stroke-width="1"/>
+  <text x="60" y="158" font-size="9" fill="#999" text-anchor="end">0</text>
+  <rect x="271" y="65.0" width="65" height="90.0" fill="#FFEBEE" opacity="0.5" rx="2"/>
+  <rect x="85" y="100.6" width="65" height="54.4" fill="#90A4AE" rx="3"/>
+  <rect x="85" y="85.4" width="65" height="15.2" fill="#B0BEC5" rx="0"/>
+  <rect x="85" y="85.4" width="65" height="4" fill="#B0BEC5" rx="2"/>
+  <rect x="178" y="97.4" width="65" height="57.6" fill="#90A4AE" rx="3"/>
+  <rect x="178" y="80.6" width="65" height="16.8" fill="#B0BEC5" rx="0"/>
+  <rect x="178" y="80.6" width="65" height="4" fill="#B0BEC5" rx="2"/>
+  <rect x="271" y="88.6" width="65" height="66.4" fill="#B71C1C" rx="3"/>
+  <rect x="271" y="67.0" width="65" height="21.6" fill="#E57373" rx="0"/>
+  <rect x="271" y="67.0" width="65" height="4" fill="#E57373" rx="2"/>
+  <rect x="364" y="96.6" width="65" height="58.4" fill="#90A4AE" rx="3"/>
+  <rect x="364" y="80.6" width="65" height="16.0" fill="#B0BEC5" rx="0"/>
+  <rect x="364" y="80.6" width="65" height="4" fill="#B0BEC5" rx="2"/>
+  <rect x="457" y="101.4" width="65" height="53.6" fill="#607D8B" rx="3"/>
+  <rect x="457" y="91.0" width="65" height="10.4" fill="#90A4AE" rx="0"/>
+  <rect x="457" y="91.0" width="65" height="4" fill="#90A4AE" rx="2"/>
+  <rect x="550" y="114.2" width="65" height="40.8" fill="#1565C0" rx="3"/>
+  <rect x="550" y="91.8" width="65" height="22.4" fill="#42A5F5" rx="0"/>
+  <rect x="550" y="91.8" width="65" height="4" fill="#42A5F5" rx="2"/>
+  <text x="117" y="81.4" font-size="9" fill="#555" text-anchor="middle" font-weight="400">87</text>
+  <text x="117" y="92.4" font-size="8" fill="#555" text-anchor="middle" opacity="0.8">68+19</text>
+  <text x="210" y="76.6" font-size="9" fill="#555" text-anchor="middle" font-weight="400">93</text>
+  <text x="210" y="87.6" font-size="8" fill="#555" text-anchor="middle" opacity="0.8">72+21</text>
+  <text x="303" y="63.0" font-size="10" fill="#C62828" text-anchor="middle" font-weight="700">110</text>
+  <text x="303" y="74.0" font-size="8" fill="#C62828" text-anchor="middle" opacity="0.8">83+27</text>
+  <text x="396" y="76.6" font-size="9" fill="#555" text-anchor="middle" font-weight="400">93</text>
+  <text x="396" y="87.6" font-size="8" fill="#555" text-anchor="middle" opacity="0.8">73+20</text>
+  <text x="489" y="87.0" font-size="9" fill="#555" text-anchor="middle" font-weight="400">80</text>
+  <text x="489" y="98.0" font-size="8" fill="#555" text-anchor="middle" opacity="0.8">67+13</text>
+  <text x="582" y="87.8" font-size="10" fill="#1565C0" text-anchor="middle" font-weight="700">79</text>
+  <text x="582" y="98.8" font-size="8" fill="#1565C0" text-anchor="middle" opacity="0.8">51+28</text>
+  <text x="117" y="170" font-size="9" fill="#666" text-anchor="middle" font-weight="400">6월2주</text>
+  <text x="210" y="170" font-size="9" fill="#666" text-anchor="middle" font-weight="400">6월3주</text>
+  <text x="303" y="170" font-size="9" fill="#C62828" text-anchor="middle" font-weight="700">6월4주</text>
+  <text x="396" y="170" font-size="9" fill="#666" text-anchor="middle" font-weight="400">7월1주</text>
+  <text x="489" y="170" font-size="9" fill="#666" text-anchor="middle" font-weight="400">7월2주</text>
+  <text x="582" y="170" font-size="9" fill="#1565C0" text-anchor="middle" font-weight="700">7월3주</text>
+</svg>
+<div class="monthly-block">
+<h3>📅 월별 현황 (2026년 1월~7월) <span class="monthly-tag">연간 흐름</span></h3>
+<p class="note">※ 월별 = 주차 라벨이 아닌 분류일자 기준 합산. 7월 = 1~3주차 누적.</p>
+<table>
+<tr><th>구분</th><th>1월</th><th>2월</th><th>3월</th><th>4월</th><th>5월</th><th>6월</th><th>7월</th></tr>
+<tr><td class="left bold">📦 분실</td><td class="bold">394</td><td class="bold">330</td><td class="bold">467</td><td class="bold">617</td><td class="bold">380</td><td class="bold">320</td><td class="bold">171</td></tr>
+<tr style="background:#F8F9FA"><td class="left bold">🔄 타인세탁물</td><td class="bold">89</td><td class="bold">70</td><td class="bold">122</td><td class="bold">199</td><td class="bold">163</td><td class="bold">88</td><td class="bold">57</td></tr>
+<tr><td class="left bold">합계</td><td class="bold">483</td><td class="bold">400</td><td class="bold">589</td><td class="bold">816</td><td class="bold">543</td><td class="bold">408</td><td class="bold">228</td></tr>
+<tr style="background:#F8F9FA"><td class="left bold">총VOC 대비</td><td>4.7%</td><td>4.6%</td><td>5.1%</td><td>6.0%</td><td>4.4%</td><td>4.4%</td><td>4.5%</td></tr>
+<tr><td class="left bold">수거대비</td><td>0.56%</td><td>0.54%</td><td>0.61%</td><td>0.83%</td><td>0.56%</td><td>0.49%</td><td>0.44%</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 안심케어 -->
+<div class="card-plain">
+<h2>🛡️ 안심케어 分析</h2>
+<p class="note">ℹ️ <strong>7월3주차 안심케어 91건</strong> — 전주(72건) 대비 ▲19건(26.4%) 증가. 6월3주(138건) 이후 4주간 하락했다가 이번 주 반등.</p>
+<table><tr><th>구분</th><th>6월2주</th><th style="background:#C62828;color:#fff">6월3주</th><th>6월4주</th><th>7월1주</th><th>7월2주</th><th style="background:#1565C0;color:#fff">7월3주</th><th>증감</th></tr>
+<tr><td class="left">안심케어</td><td>136</td><td>138</td><td style="color:#C62828;font-weight:700">119</td><td>100</td><td>72</td><td class="bold" style="color:#1565C0">91</td><td><span style="color:#C62828">▲19</span></td></tr>
+</table>
+<svg viewBox="0 0 660 180" width="100%" style="margin-top:10px">
+  <line x1="65" y1="35" x2="625" y2="35" stroke="#EEE" stroke-width="1"/>
+  <text x="60" y="38" font-size="9" fill="#999" text-anchor="end">200</text>
+  <line x1="65" y1="95" x2="625" y2="95" stroke="#EEE" stroke-width="1"/>
+  <text x="60" y="98" font-size="9" fill="#999" text-anchor="end">100</text>
+  <line x1="65" y1="155" x2="625" y2="155" stroke="#CCC" stroke-width="1"/>
+  <text x="60" y="158" font-size="9" fill="#999" text-anchor="end">0</text>
+  <rect x="178" y="70.2" width="65" height="84.8" fill="#FFEBEE" opacity="0.5" rx="2"/>
+  <rect x="85" y="73.4" width="65" height="81.6" fill="#90A4AE" rx="3"/>
+  <rect x="178" y="72.2" width="65" height="82.8" fill="#C62828" rx="3"/>
+  <rect x="271" y="83.6" width="65" height="71.4" fill="#90A4AE" rx="3"/>
+  <rect x="364" y="95.0" width="65" height="60.0" fill="#90A4AE" rx="3"/>
+  <rect x="457" y="111.8" width="65" height="43.2" fill="#78909C" rx="3"/>
+  <rect x="550" y="100.4" width="65" height="54.6" fill="#1565C0" rx="3"/>
+  <text x="117" y="69.4" font-size="9" fill="#555" text-anchor="middle" font-weight="400">136</text>
+  <text x="210" y="68.2" font-size="10" fill="#C62828" text-anchor="middle" font-weight="700">138</text>
+  <text x="303" y="79.6" font-size="9" fill="#555" text-anchor="middle" font-weight="400">119</text>
+  <text x="396" y="91.0" font-size="9" fill="#555" text-anchor="middle" font-weight="400">100</text>
+  <text x="489" y="107.8" font-size="9" fill="#555" text-anchor="middle" font-weight="400">72</text>
+  <text x="582" y="96.4" font-size="10" fill="#1565C0" text-anchor="middle" font-weight="700">91</text>
+  <text x="117" y="170" font-size="9" fill="#666" text-anchor="middle" font-weight="400">6월2주</text>
+  <text x="210" y="170" font-size="9" fill="#C62828" text-anchor="middle" font-weight="700">6월3주</text>
+  <text x="303" y="170" font-size="9" fill="#666" text-anchor="middle" font-weight="400">6월4주</text>
+  <text x="396" y="170" font-size="9" fill="#666" text-anchor="middle" font-weight="400">7월1주</text>
+  <text x="489" y="170" font-size="9" fill="#666" text-anchor="middle" font-weight="400">7월2주</text>
+  <text x="582" y="170" font-size="9" fill="#1565C0" text-anchor="middle" font-weight="700">7월3주</text>
+</svg>
+<div class="monthly-block">
+<h3>📅 월별 현황 (2026년 1월~7월) <span class="monthly-tag">연간 흐름</span></h3>
+<p class="note">※ 월별 = 주차 라벨 합산 기준. 7월 = 1~3주차 누적.</p>
+<table>
+<tr><th>구분</th><th>1월</th><th>2월</th><th>3월</th><th>4월</th><th>5월</th><th>6월</th><th>7월</th></tr>
+<tr><td class="left bold">안심케어</td><td class="bold">675</td><td class="bold">437</td><td class="bold">574</td><td class="bold">846</td><td class="bold">642</td><td class="bold">543</td><td class="bold">264</td></tr>
+<tr style="background:#FAFAFA"><td class="left bold">총VOC 대비 비중</td><td>6.9%</td><td>5.6%</td><td>6.1%</td><td>5.9%</td><td>6.7%</td><td>6.8%</td><td>4.6%</td></tr>
+<tr><td class="left bold">총 주문수 대비 비중</td><td>0.69%</td><td>0.59%</td><td>0.66%</td><td>0.74%</td><td>0.74%</td><td>0.70%</td><td>0.46%</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 종합 요약 -->
+<div class="card-plain">
+<h2>📋 종합 요약</h2>
+<table>
+  <tr><th>구분</th><th>7월2주</th><th>7월3주</th><th>증감</th><th>평가</th></tr>
+  <tr><td class="left">총VOC</td><td>1,804건</td><td class="bold">1,915건</td><td style="color:#C62828">▲111</td><td><span class="chip chip-yellow">⚠️ 소폭 증가</span></td></tr>
+<tr style="background:#FAFAFA"><td class="left">VOC율</td><td>9.72%</td><td class="bold">9.90%</td><td style="color:#C62828">▲0.18%p</td><td><span class="chip chip-yellow">⚠️ 증가</span></td></tr>
+<tr><td class="left">결제/요금제</td><td>488건</td><td class="bold">537건</td><td style="color:#C62828">▲49</td><td><span class="chip chip-yellow">⚠️ 소폭 증가</span></td></tr>
+<tr style="background:#FAFAFA"><td class="left">수거/배송</td><td>468건</td><td class="bold">462건</td><td style="color:#2E7D32">▼6</td><td><span class="chip chip-green">✅ 개선</span></td></tr>
+<tr><td class="left">안심케어</td><td>72건</td><td class="bold">91건</td><td style="color:#C62828">▲19</td><td><span class="chip chip-yellow">⚠️ 소폭 증가</span></td></tr>
+<tr style="background:#FAFAFA"><td class="left">세탁품질5대</td><td>190건</td><td class="bold">209건</td><td style="color:#C62828">▲19</td><td><span class="chip chip-yellow">⚠️ 소폭 증가</span></td></tr>
+<tr><td class="left">└ 변형</td><td>64건</td><td class="bold">78건</td><td style="color:#C62828">▲14</td><td><span class="chip chip-yellow">⚠️ 소폭 증가</span></td></tr>
+<tr style="background:#FAFAFA"><td class="left">└ 오염</td><td>52건</td><td class="bold">58건</td><td style="color:#C62828">▲6</td><td><span class="chip chip-yellow">⚠️ 소폭 증가</span></td></tr>
+<tr><td class="left">└ 다림질</td><td>29건</td><td class="bold">25건</td><td style="color:#2E7D32">▼4</td><td><span class="chip chip-green">✅ 개선</span></td></tr>
+<tr style="background:#FAFAFA"><td class="left">회원/기타</td><td>102건</td><td class="bold">71건</td><td style="color:#2E7D32">▼31</td><td><span class="chip chip-green">✅ 개선</span></td></tr>
+</table>
+<div class="note" style="margin-top:12px">
+  · <strong>VOC율 9.90%</strong>: 7월2주(9.72%) 저점 이후 소폭 반등 — 2주 만에 상승 전환<br>
+  · <strong>결제/요금제(▲49)·안심케어(▲19)·변형(▲14)</strong>이 전체 증가 주도<br>
+  · <strong>건조/냄새 43건(▲5건)</strong>: 5주 연속 상승(14→22→24→38→43) — 집중 모니터링 및 원인 파악 필요<br>
+  · <strong>수거/배송(▼6건)·다림질(▼4건)·회원/기타(▼31건)</strong>: 일부 개선, 긍정적 신호
+</div>
+<div style="margin-top:12px;font-size:11px;color:#888;text-align:right">
+  작성일: 2026.07.21 &nbsp;|&nbsp; 데이터 기준: South(군포)+East(성수) 합산 &nbsp;|&nbsp; 수거건수 19,334건
+</div>
+</div>
+
+<!-- 집중분석섹션 -->
+<div class="section-group" style="margin-top:20px">
+<div class="section-group-title">&#128205; 집중 분석 &#8212; VOC 제로 타겟 카테고리</div>
+<div class="note note-warn" style="margin-bottom:16px;font-size:11.5px">
+  <strong>분석 기조:</strong> 아래 4개 영역의 목표는 VOC 건수 <strong>0건</strong>이다.
+  소폭 감소를 성과로 해석하지 않는다. 현재 발생 건수는 그 자체로 운영 실패이며,
+  유형별 근절 방안 도출에 집중한다.
+</div>
+
+<!-- ============================== -->
+<!-- 소주제 1: 분실류 -->
+<!-- ============================== -->
+<div class="card-plain" style="border-left:4px solid #C62828;margin-bottom:16px">
+<h2 style="color:#B71C1C;border-left:none;padding-left:0">&#128308; 소주제 #1 &#183; 분실류 <span style="font-size:11px;font-weight:400;color:#888">목표: 0건</span></h2>
+<div style="font-size:11px;color:#555;margin-bottom:12px">분석 대상: &#128309;_분실 &#124; &#128309;_타인_세탁물_발견 &#124; 1월1주~7월2주(28주) &#124; South(S) / East(E) 분리</div>
+
+<div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+  <div style="flex:1;min-width:120px;background:#FFF3E0;border-radius:8px;padding:10px 12px;border:1px solid #FFB74D">
+    <div style="font-size:10px;color:#E65100;font-weight:600">분실 South (누적)</div>
+    <div style="font-size:22px;font-weight:700;color:#BF360C">1,673건</div>
+    <div style="font-size:10px;color:#888">7월2주: 41건 / 7월1주: 40건</div>
+  </div>
+  <div style="flex:1;min-width:120px;background:#FFF3E0;border-radius:8px;padding:10px 12px;border:1px solid #FFB74D">
+    <div style="font-size:10px;color:#E65100;font-weight:600">분실 East (누적)</div>
+    <div style="font-size:22px;font-weight:700;color:#BF360C">959건</div>
+    <div style="font-size:10px;color:#888">7월2주: 23건 / 7월1주: 32건</div>
+  </div>
+  <div style="flex:1;min-width:120px;background:#FCE4EC;border-radius:8px;padding:10px 12px;border:1px solid #EF9A9A">
+    <div style="font-size:10px;color:#880E4F;font-weight:600">타인세탁물 South (누적)</div>
+    <div style="font-size:22px;font-weight:700;color:#880E4F">455건</div>
+    <div style="font-size:10px;color:#888">7월2주: 7건</div>
+  </div>
+  <div style="flex:1;min-width:120px;background:#FCE4EC;border-radius:8px;padding:10px 12px;border:1px solid #EF9A9A">
+    <div style="font-size:10px;color:#880E4F;font-weight:600">타인세탁물 East (누적)</div>
+    <div style="font-size:22px;font-weight:700;color:#880E4F">306건</div>
+    <div style="font-size:10px;color:#888">7월2주: 6건</div>
+  </div>
+</div>
+
+<div style="font-size:11px;font-weight:600;color:#333;margin-bottom:4px">주차별 건수 추이 (분실 South/East, 타인세탁물 South/East)</div>
+<div style="overflow-x:auto">
+<canvas id="chart_bunshil" width="840" height="200" style="display:block;min-width:840px"></canvas>
+</div>
+
+<div style="margin-top:14px">
+<div style="font-size:11px;font-weight:700;color:#C62828;margin-bottom:6px">&#128309; 분실 유형 분류 (1월~7월2주 누적)</div>
+<table style="font-size:11px">
+<tr><th style="text-align:left">유형</th><th>South</th><th>East</th><th>합계</th><th style="text-align:left">귀책/원인</th></tr>
+<tr><td class="left">미등록 (수거 시 품목 미스캔)</td><td>194</td><td>259</td><td class="bold">453</td><td class="left" style="color:#C62828">운영 귀책 — 수거 스캔 누락</td></tr>
+<tr style="background:#FAFAFA"><td class="left">생활빨래 일부 분실</td><td>163</td><td>168</td><td class="bold">331</td><td class="left" style="color:#C62828">공정 귀책 — 분류/포장 오류</td></tr>
+<tr><td class="left">세탁 후 분실</td><td>124</td><td>161</td><td class="bold">285</td><td class="left" style="color:#C62828">공정 귀책 — 세탁/건조 간 유실</td></tr>
+<tr style="background:#FAFAFA"><td class="left">부속품 등록 누락</td><td>91</td><td>94</td><td class="bold">185</td><td class="left" style="color:#C62828">수거 시 체크 프로세스 부재</td></tr>
+<tr style="background:#FFF8E1"><td class="left"><strong>기타 (내용 미기입)</strong></td><td><strong>790</strong></td><td><strong>233</strong></td><td class="bold" style="color:#E65100">1,023</td><td class="left" style="color:#E65100">&#9888;&#65039; 미분류 — 유형 파악 불가</td></tr>
+</table>
+</div>
+
+<div style="margin-top:10px">
+<div style="font-size:11px;font-weight:700;color:#880E4F;margin-bottom:6px">&#128310; 타인세탁물 발견 유형 분류</div>
+<table style="font-size:11px">
+<tr><th style="text-align:left">유형</th><th>South</th><th>East</th><th>합계</th><th style="text-align:left">원인</th></tr>
+<tr><td class="left">타고객 오등록</td><td>158</td><td>155</td><td class="bold">313</td><td class="left" style="color:#C62828">수거 시 스캔/등록 오류</td></tr>
+<tr style="background:#FAFAFA"><td class="left">타고객 오패킹</td><td>150</td><td>78</td><td class="bold">228</td><td class="left" style="color:#C62828">배송/포장 단계 혼재</td></tr>
+<tr><td class="left">바코드 오부착</td><td>90</td><td>6</td><td class="bold">96</td><td class="left" style="color:#C62828">라벨링 프로세스 오류</td></tr>
+<tr style="background:#FAFAFA"><td class="left">생활빨래 내 혼재</td><td>75</td><td>69</td><td class="bold">144</td><td class="left" style="color:#C62828">분류 공정 미흡</td></tr>
+<tr><td class="left">런드렛/라이트백 잔여</td><td>10</td><td>15</td><td class="bold">25</td><td class="left" style="color:#E65100">수거 완료 확인 미흡</td></tr>
+</table>
+</div>
+
+<div class="note note-warn" style="margin-top:12px">
+  <strong>&#9888; 긴급 과제:</strong>
+  분실 VOC의 약 <strong>46%(1,023건)가 "기타" 미분류</strong>로 처리되어 유형별 근절 방향 도출 자체가 불가능하다.
+  가장 먼저 해결해야 할 것은 VOC 유형 기록의 정확성이다. "기타" 선택을 구조적으로 차단하지 않으면 재발 방지 대책의 실효성이 없다.<br>
+  South의 타고객 오패킹(150건)은 East(78건) 대비 <strong>1.9배</strong>, 바코드 오부착(90건)은 East(6건) 대비 <strong>15배</strong>로 포장/라벨링 공정의 South 집중 점검이 필요하다.
+</div>
+</div>
+
+
+
+<!-- 분실류 전수분析 결과 -->
+<div class="card-plain" style="border-left:4px solid #1565C0;margin-bottom:16px;margin-top:20px">
+<h2 style="color:#1565C0;border-left:none;padding-left:0">&#128994; 소주제 #1 심층 &middot; 분실류 전수분析 결과 <span style="font-size:11px;font-weight:400;color:#555">3,485건 &middot; 유형 분류 커버리지 99%+ &middot; 1월~7월3주</span></h2>
+<div style="font-size:11px;color:#666;background:#E3F2FD;border:1px solid #90CAF9;border-radius:6px;padding:8px 12px;margin-bottom:14px">
+  <strong>분析 방법:</strong> South_품질_raw + East_품질_raw 전체에서 <code>수거/배송/런드렛</code> 컬럼에 <code>🔹_분실</code> 또는 <code>🔹_타인_세탁물_발견</code> 태그가 있는 행 3,485건을 전수 추출.
+  <code>문의내용</code>(고객 자유 서술) + <code>분실_기타내용</code>·<code>타인세탁물발견_기타내용</code>(CS 입력 태그)를 결합해 키워드/패턴 기반으로 세부 유형 분류.
+  <em>분실_수거시_미등록</em>은 CS 조회 결과 태그(<code>⚠️_미등록</code>)에 의한 분류로, 고객은 수거 미등록 사실을 인지하지 못함.</div>
+<div style="font-size:12px;font-weight:700;color:#333;margin-bottom:8px;padding:6px 0;border-bottom:2px solid #90CAF9">&#128204; 유형별 전체 건수 (South + East 합산, 1월~7월3주)</div>
+<table style="font-size:11.5px;margin-bottom:16px">
+<tr>
+  <th style="text-align:left;width:28%">유형</th>
+  <th>South</th><th>East</th><th>합계</th><th>비중</th><th style="text-align:left;width:30%">고객 발화 예시</th>
+</tr>
+<tr style="background:#E8EAF6">
+  <td class="left" colspan="6" style="font-size:11px;font-weight:700;color:#1565C0;padding:4px 6px">&#9654; 분실 유형 (3,150건)</td>
+</tr><tr>
+  <td class="left">분실_접수후_누락</td>
+  <td style="color:#1565C0">412</td><td style="color:#F57C00">167</td>
+  <td class="bold" style="color:#1565C0">579</td><td>16.6%</td>
+  <td class="left" style="font-size:11px">"회색 피코트자켓 배송누락입니다. 부품으로 된것만 오고 정작 본품 옷이 안 왔어요. 확인바랍니다."</td>
+</tr><tr>
+  <td class="left">분실_수거시_미등록 ※ <span style="font-size:10px;color:#888">※ CS 조회 태그 기반 — 고객은 미등록 여부를 모름</span></td>
+  <td style="color:#1565C0">172</td><td style="color:#F57C00">221</td>
+  <td class="bold" style="color:#1565C0">393</td><td>11.3%</td>
+  <td class="left" style="font-size:11px">"안녕하세요.
+ 
+ 
+ 
+ 최근 의뢰한 세탁물 중, 베개커버 1개가 누락된 상태로 반환된 점 확인되어 정식 배상 요청을 드립니다.
+ 
+ 
+ 
+ 해"</td>
+</tr><tr>
+  <td class="left"><strong>분실_부속품</strong></td>
+  <td style="color:#1565C0">242</td><td style="color:#F57C00">187</td>
+  <td class="bold" style="color:#1565C0">429</td><td>12.3%</td>
+  <td class="left" style="font-size:11px">"12/29 세탁 맏긴 롱패팅 모자털이 회수가 안되었네요.
+ 
+ 하얀색털입니다
+ 
+ 그리고 해당패팅 세탁이 잘 안된부분이 있어서 재세탁도 원합니다"</td>
+</tr><tr>
+  <td class="left">분실_신발류</td>
+  <td style="color:#1565C0">74</td><td style="color:#F57C00">31</td>
+  <td class="bold" style="color:#1565C0">105</td><td>3.0%</td>
+  <td class="left" style="font-size:11px">"롱패딩,후리스,운동화 2켤레를 맡겼는데 운동화 2켤레 모두 오지 않았습니다. 배송 누락된 것 같습니다. 얼른 찾아주세요"</td>
+</tr><tr>
+  <td class="left">분실_생활빨래_처리중</td>
+  <td style="color:#1565C0">268</td><td style="color:#F57C00">277</td>
+  <td class="bold" style="color:#1565C0">545</td><td>15.6%</td>
+  <td class="left" style="font-size:11px">"자꾸 양말이 분실 되네요. 오랫동안 이용 했는데, 내 실수 객건이 한 것 보다는 지속적으로 분실 되는 것 같습니다. 사진을 찍어 놓지 않아 이거"</td>
+</tr><tr>
+  <td class="left">분실_기타_미분류(태그)</td>
+  <td style="color:#1565C0">76</td><td style="color:#F57C00">32</td>
+  <td class="bold" style="color:#757575">108</td><td>3.1%</td>
+  <td class="left" style="font-size:11px">"다른옷 배송됨 회수바람"</td>
+</tr><tr>
+  <td class="left">분실_내용불명확</td>
+  <td style="color:#1565C0">662</td><td style="color:#F57C00">329</td>
+  <td class="bold" style="color:#757575">991</td><td>28.4%</td>
+  <td class="left" style="font-size:11px">"아니요 모자를 처음부터 안줬다는게 아니라요 따로 주는걸 모르고 모자를 런드렛 안에 그냥 놔둔 채로 반납을 했다구요.패딩이 투명 봉다리가 아니라 "</td>
+</tr><tr style="background:#F3E5F5">
+  <td class="left" colspan="6" style="font-size:11px;font-weight:700;color:#6A1B9A;padding:4px 6px">&#9654; 타인세탁물 혼입 (335건)</td>
+</tr><tr style="background:#FAFAFA">
+  <td class="left">타인_타고객물건_혼입</td>
+  <td style="color:#1565C0">123</td><td style="color:#F57C00">55</td>
+  <td class="bold" style="color:#6A1B9A">178</td><td>5.1%</td>
+  <td class="left" style="font-size:11px">"최근 계속 배송지연 되고 있습니다.
+ 
+ 1달에 2회 이용인데 2번 모두 지연 배송되는 건 문제가 심각합니다.
+ 
+ 포인트 안 받고 익일 배송하"</td>
+</tr><tr style="background:#FAFAFA">
+  <td class="left">타인_바코드_오부착</td>
+  <td style="color:#1565C0">145</td><td style="color:#F57C00">2</td>
+  <td class="bold" style="color:#6A1B9A">147</td><td>4.2%</td>
+  <td class="left" style="font-size:11px">"지난번에 제가 맡기지 않은 다른사람의 남자 폴로코트가 왔다고 해서 반납했는데요.
+ 
+ 지금 보니까 정작 제가 맡긴 이 코트가 없습니다......"</td>
+</tr><tr style="background:#FAFAFA">
+  <td class="left">타인_런드렛/라이트백_잔여</td>
+  <td style="color:#1565C0">8</td><td style="color:#F57C00">2</td>
+  <td class="bold" style="color:#6A1B9A">10</td><td>0.3%</td>
+  <td class="left" style="font-size:11px">"바지 안오고 다른 세탁물이 왔습니다
+ 
+ 내일 명절당일에 급히입어야 하는 바지인데 오늘 바로 배송부탁드립니다
+ 
+ 대신에 다른사람의 치마가 온 "</td>
+</tr><tr style="background:#E8EAF6;font-weight:700">
+  <td class="left">합계</td>
+  <td style="color:#1565C0">2,182</td><td style="color:#F57C00">1,303</td>
+  <td style="color:#1565C0">3,485</td><td>100%</td><td></td>
+</tr>
+</table>
+</div>
+
+
+<!-- ============================== -->
+<!-- 소주제 2: 변형/변색/손상 -->
+<!-- ============================== -->
+<div class="card-plain" style="border-left:4px solid #4527A0;margin-bottom:16px">
+<h2 style="color:#311B92;border-left:none;padding-left:0">&#128995; 소주제 #2 &#183; 변형/변색/손상 <span style="font-size:11px;font-weight:400;color:#888">목표: 0건</span></h2>
+<div style="font-size:11px;color:#555;margin-bottom:12px">분석 대상: &#128161; 변형/변색/손상 (대분류 전체) &#124; 중분류 9개 항목 &#124; South(S) / East(E) 분리</div>
+
+<div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+  <div style="flex:1;min-width:120px;background:#EDE7F6;border-radius:8px;padding:10px 12px;border:1px solid #CE93D8">
+    <div style="font-size:10px;color:#4527A0;font-weight:600">변형/손상 South (누적)</div>
+    <div style="font-size:22px;font-weight:700;color:#4527A0">1,854건</div>
+    <div style="font-size:10px;color:#888">7월2주: 43건 / 7월1주: 45건</div>
+  </div>
+  <div style="flex:1;min-width:120px;background:#EDE7F6;border-radius:8px;padding:10px 12px;border:1px solid #CE93D8">
+    <div style="font-size:10px;color:#4527A0;font-weight:600">변형/손상 East (누적)</div>
+    <div style="font-size:22px;font-weight:700;color:#4527A0">820건</div>
+    <div style="font-size:10px;color:#888">7월2주: 19건 / 7월1주: 26건</div>
+  </div>
+  <div style="flex:1;min-width:120px;background:#F3E5F5;border-radius:8px;padding:10px 12px;border:1px solid #CE93D8;text-align:center">
+    <div style="font-size:10px;color:#6A1B9A;font-weight:600">East 없던_손상 비중</div>
+    <div style="font-size:22px;font-weight:700;color:#C62828">44%</div>
+    <div style="font-size:10px;color:#888">vs South 25% <span style="color:#C62828">&#9650; +19%p</span></div>
+  </div>
+  <div style="flex:1;min-width:120px;background:#F3E5F5;border-radius:8px;padding:10px 12px;border:1px solid #CE93D8;text-align:center">
+    <div style="font-size:10px;color:#6A1B9A;font-weight:600">South 부속품_손상 비중</div>
+    <div style="font-size:22px;font-weight:700;color:#4527A0">27%</div>
+    <div style="font-size:10px;color:#888">vs East 14% <span style="color:#C62828">&#9650; +13%p</span></div>
+  </div>
+</div>
+
+<div style="font-size:11px;font-weight:600;color:#333;margin-bottom:4px">주차별 건수 추이 (&#9632; South &#183; &#9632; East)</div>
+<div style="overflow-x:auto">
+<canvas id="chart_byungform" width="840" height="200" style="display:block;min-width:840px"></canvas>
+</div>
+
+<div style="margin-top:14px">
+<div style="font-size:11px;font-weight:700;color:#333;margin-bottom:6px">중분류별 누적 건수 및 비중</div>
+<table style="font-size:11px">
+<tr><th style="text-align:left">중분류</th><th>South</th><th>비중S</th><th>East</th><th>비중E</th><th style="text-align:left">주요 특이점</th></tr>
+<tr><td class="left">없던_손상_발생</td><td>495</td><td>25.0%</td><td class="bold" style="color:#C62828">381</td><td class="bold" style="color:#C62828">44.4%</td><td class="left" style="color:#C62828">East 집중 발생 &#9650;&#9650; — East 즉시 점검</td></tr>
+<tr style="background:#FAFAFA"><td class="left">부속품_손상</td><td class="bold" style="color:#4527A0">540</td><td style="color:#4527A0">27.3%</td><td>116</td><td>13.5%</td><td class="left">South 최다 — 단추/지퍼/끈 손상 집중</td></tr>
+<tr><td class="left">변형_수축</td><td>308</td><td>15.6%</td><td>125</td><td>14.6%</td><td class="left">세탁 온도/시간 관리 문제</td></tr>
+<tr style="background:#FAFAFA"><td class="left">옷감_변형</td><td>169</td><td>8.5%</td><td>66</td><td>7.7%</td><td class="left">소재별 세탁 분리 미흡</td></tr>
+<tr><td class="left">없던_변색/이염/탈색 (합산)</td><td>297</td><td>15.0%</td><td>75</td><td>8.7%</td><td class="left">이염 방지 소재 분리 세탁 기준 미준수</td></tr>
+<tr style="background:#FAFAFA"><td class="left">변형_늘어남</td><td>33</td><td>1.7%</td><td>17</td><td>2.0%</td><td class="left">섬유별 세탁 조건 미준수</td></tr>
+<tr><td class="left">기존_추가손상</td><td>12</td><td>0.6%</td><td>11</td><td>1.3%</td><td class="left">수거 시 상태 확인 부재</td></tr>
+<tr style="background:#FAFAFA"><td class="left">프린팅_손상</td><td>35</td><td>1.8%</td><td>15</td><td>1.7%</td><td class="left">프린팅 의류 취급 주의 미흡</td></tr>
+<tr><td class="left">기타</td><td>76</td><td>3.8%</td><td>51</td><td>5.9%</td><td class="left">유형 미분류</td></tr>
+</table>
+</div>
+
+<div class="note note-warn" style="margin-top:12px">
+  <strong>&#9888; East 긴급 점검:</strong>
+  East의 "없던_손상_발생" 비중(44%)은 South(25%)의 <strong>1.8배</strong>다.
+  세탁 처리 중 새로운 손상이 East에서 구조적으로 더 많이 발생하고 있다.
+  기기 상태, 세탁 매뉴얼 준수, 의류 소재 사전 분류 체계를 East 중심으로 즉시 점검해야 한다.<br>
+  South는 <strong>부속품_손상(540건, 27%)</strong>이 최다로, 수거 시 부속품 상태 확인 및 분리 포장 프로세스 강화가 필요하다.
+  변형_수축·없던_변색·탈색 합산 <strong>722건(South)</strong>은 세탁 온도 및 소재별 분리 세탁 기준이 현장에서 지켜지지 않고 있음을 의미한다.
+</div>
+</div>
+
+
+
+<!-- 변형/변색/손상 전수분析 결과 -->
+<div class="card-plain" style="border-left:4px solid #6A1B9A;margin-bottom:16px;margin-top:20px">
+<h2 style="color:#6A1B9A;border-left:none;padding-left:0">&#128994; 소주제 #2 심층 &middot; 변형/변색/손상 전수분析 결과 <span style="font-size:11px;font-weight:400;color:#555">2,922건 &middot; CS 태그 기반 유형 분류 &middot; 분류 커버리지 99.9%</span></h2>
+<div style="font-size:11px;color:#666;background:#F3E5F5;border:1px solid #CE93D8;border-radius:6px;padding:8px 12px;margin-bottom:14px">
+  <strong>분析 방법:</strong> South_품질_raw + East_품질_raw 전체에서 <code>변형/변색/손상</code> 태그 설정 행(2,922건)을 추출하고,
+  CS 태깅값과 <strong>문의내용 키워드</strong>를 결합해 세부 유형으로 분류하였다.
+  목표: VOC 0건 달성. 제조 공정(세탁 방법 선택, 취급 부주의) 원인 비중을 정량화하는 것이 핵심.
+</div>
+<div style="font-size:12px;font-weight:700;color:#333;margin-bottom:8px;padding:6px 0;border-bottom:2px solid #CE93D8">&#128204; 유형별 전체 건수 (South + East 합산, 1월~7월3주)</div>
+<table style="font-size:11.5px;margin-bottom:16px">
+<tr>
+  <th style="text-align:left;width:30%">유형</th>
+  <th>South</th><th>East</th><th>합계</th><th>비중</th><th style="text-align:left;width:30%">주요 고객 발화 패턴</th>
+</tr>
+
+<!-- 손상 그룹 -->
+<tr style="background:#EDE7F6">
+  <td class="left" colspan="6" style="font-size:11px;font-weight:700;color:#6A1B9A;padding:4px 6px">&#9654; 손상 발생 (933건)</td>
+</tr>
+<tr>
+  <td class="left"><strong>손상_없던손상(기타)</strong></td>
+  <td style="color:#C62828">304</td><td style="color:#6A1B9A">261</td>
+  <td class="bold">565</td><td>19.3%</td>
+  <td class="left" style="font-size:11px">"안녕하세요 1905408 로 23년 12월에 세탁을 맡긴적이 있는데 당시에 멀쩡히 잘 입던 옷이 파손되어있다며 세탁불가 판정을"</td>
+</tr><tr style="background:#FAFAFA">
+  <td class="left">손상_뜯김/찢김</td>
+  <td style="color:#C62828">144</td><td style="color:#6A1B9A">71</td>
+  <td class="bold">215</td><td>7.4%</td>
+  <td class="left" style="font-size:11px">"보풀 제거 후 옷에 구멍이 엄청 많이 생겼어요. 일단 육안으로는 다섯개정도 보이는데 더 있는지도 모르겠어요"</td>
+</tr><tr>
+  <td class="left">손상_패딩류(터짐/솜죽음)</td>
+  <td style="color:#C62828">45</td><td style="color:#6A1B9A">53</td>
+  <td class="bold">98</td><td>3.4%</td>
+  <td class="left" style="font-size:11px">"지난 겨울 끝나고 맡긴 롱패딩 다시 입으려고 꺼내보니 이렇게
+ 
+ 되어 있습니다 분명 검수하고 세탁해주시는거라 세탁 전은 문제"</td>
+</tr><tr>
+  <td class="left">손상_기존손상_악화</td>
+  <td style="color:#C62828">26</td><td style="color:#6A1B9A">11</td>
+  <td class="bold">37</td><td>1.3%</td>
+  <td class="left" style="font-size:11px">"신발세탁하여 오늘 봉지뜯고 봤는데 안쪽이 다까지고 
+ 
+ 훼손되었습니다. 세탁과정에서 열처리를 하였는지 부서지네요. 이에대한 "</td>
+</tr><tr style="background:#FAFAFA">
+  <td class="left">손상_마모/긁힘</td>
+  <td style="color:#C62828">14</td><td style="color:#6A1B9A">4</td>
+  <td class="bold">18</td><td>0.6%</td>
+  <td class="left" style="font-size:11px">"까만색 벨벳 같은 원단의 천인데, 사진처럼 긁힌것처럼 손상되어왔습니다. 세탁표를 참조해서 세탁이 이루어 지는것 아닌가요? 어떻"</td>
+</tr>
+
+<!-- 변형 그룹 -->
+<tr style="background:#EDE7F6">
+  <td class="left" colspan="6" style="font-size:11px;font-weight:700;color:#6A1B9A;padding:4px 6px">&#9654; 변형 (787건)</td>
+</tr>
+<tr>
+  <td class="left"><strong>변형_수축(줄어듬)</strong></td>
+  <td style="color:#C62828">312</td><td style="color:#6A1B9A">127</td>
+  <td class="bold">439</td><td>15.0%</td>
+  <td class="left" style="font-size:11px">"개별클리닝 진행 후 오늘 옷을 꺼냈는데
+ 
+ 옷이 현저히 줄어있어요"</td>
+</tr><tr style="background:#FAFAFA">
+  <td class="left">변형_옷감변형(기타)</td>
+  <td style="color:#C62828">162</td><td style="color:#6A1B9A">64</td>
+  <td class="bold">226</td><td>7.7%</td>
+  <td class="left" style="font-size:11px">"의류보상하세요 , 보관의류가 뜯어져 수선해달랬더니 옷을 다 태워 왔네요??
+ 
+ 소비자를 기만하는 사업은
+ 
+ 알바생 잘못이든"</td>
+</tr><tr>
+  <td class="left">변형_늘어남</td>
+  <td style="color:#C62828">35</td><td style="color:#6A1B9A">18</td>
+  <td class="bold">53</td><td>1.8%</td>
+  <td class="left" style="font-size:11px">"그 동안 믿고 잘 이용해 왔었는데..이전에 흰니트 개별세탁 후 접은상태로 그대로 보관하다 이번에 입을려고 봤더니 옷이 완전 늘"</td>
+</tr><tr style="background:#FAFAFA">
+  <td class="left">변형_프린팅손상</td>
+  <td style="color:#C62828">35</td><td style="color:#6A1B9A">17</td>
+  <td class="bold">52</td><td>1.8%</td>
+  <td class="left" style="font-size:11px">"1. 우영미 검정 티셔츠 로고 스티커 탈락
+ 
+ -드라이클리닉으로 택에 적혀있는데 물세탁하셨나요?
+ 
+ -물 세탁시 스티커는 "</td>
+</tr><tr>
+  <td class="left">변형_광택손실/필링</td>
+  <td style="color:#C62828">13</td><td style="color:#6A1B9A">4</td>
+  <td class="bold">17</td><td>0.6%</td>
+  <td class="left" style="font-size:11px">"제가 똑같은 코트를 3개 구입하여
+ 
+ 2개를 런드리고에 드라이를 맡겼는데요.
+ 
+ 굉장이 옷이 낡아져서 왔습니다.
+ 
+ 오늘"</td>
+</tr>
+
+<!-- 부속품 그룹 -->
+<tr style="background:#EDE7F6">
+  <td class="left" colspan="6" style="font-size:11px;font-weight:700;color:#6A1B9A;padding:4px 6px">&#9654; 부속품 손상 (665건)</td>
+</tr>
+<tr>
+  <td class="left"><strong>부속품_단추/버튼</strong></td>
+  <td style="color:#C62828">255</td><td style="color:#6A1B9A">43</td>
+  <td class="bold">298</td><td>10.2%</td>
+  <td class="left" style="font-size:11px">"세탁 맡겼던 물품 중에 이제 확인헸는데 단추가 두개나 떨어졌더라구요. 확인가능한가요"</td>
+</tr><tr style="background:#FAFAFA">
+  <td class="left">부속품_기타손상</td>
+  <td style="color:#C62828">169</td><td style="color:#6A1B9A">44</td>
+  <td class="bold">213</td><td>7.3%</td>
+  <td class="left" style="font-size:11px">"불편을 드려 죄송하다는 몇글자가 진심이 전혀느껴지지않고
+ 
+ 짜증만 나네요
+ 
+ 받은사람한테 7일이내에 검수를 왜안했냐고 얘기"</td>
+</tr><tr>
+  <td class="left">부속품_끈/스트랩</td>
+  <td style="color:#C62828">53</td><td style="color:#6A1B9A">16</td>
+  <td class="bold">69</td><td>2.4%</td>
+  <td class="left" style="font-size:11px">"전에 치마 리본끈 너무 꽉 묶어서 안 풀린다고 한 거 아직도 안 풀려서 옷을 한 번도 입지를 못하고 있어요
+ 
+ 무슨 생각으로"</td>
+</tr><tr style="background:#FAFAFA">
+  <td class="left">부속품_지퍼</td>
+  <td style="color:#C62828">60</td><td style="color:#6A1B9A">12</td>
+  <td class="bold">72</td><td>2.5%</td>
+  <td class="left" style="font-size:11px">"31일에 도착한 재킷에 지퍼가 없이 왔어요 답변 부탁드립니다"</td>
+</tr><tr>
+  <td class="left">부속품_털/장식/패드</td>
+  <td style="color:#C62828">9</td><td style="color:#6A1B9A">4</td>
+  <td class="bold">13</td><td>0.4%</td>
+  <td class="left" style="font-size:11px">"세탁을 맡긴 패딩이 파손돼서 돌아왔습니다.
+ 
+ 모자 부분에 있는 털 연결하는 똑딱이를 그냥 뜯어버리셨어요."</td>
+</tr>
+
+<!-- 변색 그룹 -->
+<tr style="background:#EDE7F6">
+  <td class="left" colspan="6" style="font-size:11px;font-weight:700;color:#6A1B9A;padding:4px 6px">&#9654; 변색/이염/탈색 (537건)</td>
+</tr>
+<tr>
+  <td class="left">변색_이염</td>
+  <td style="color:#C62828">136</td><td style="color:#6A1B9A">47</td>
+  <td class="bold">183</td><td>6.3%</td>
+  <td class="left" style="font-size:11px">"드라이 맡긴 옷 오늘 입어보니 끈 부분에 이염이 생겼어요
+ 
+ 앞뒷면 모두 다요"</td>
+</tr><tr style="background:#FAFAFA">
+  <td class="left"><strong>변색_없던변색</strong></td>
+  <td style="color:#C62828">216</td><td style="color:#6A1B9A">79</td>
+  <td class="bold">295</td><td>10.1%</td>
+  <td class="left" style="font-size:11px">"운동화 세탁 후 신발장에 보관만 하였는데
+ 
+ 신으려고 꺼내보니 군데군데 변색이 있습니다 
+ 
+ 밑창 사진보시면 한번도 착용하"</td>
+</tr><tr>
+  <td class="left">변색_탈색</td>
+  <td style="color:#C62828">47</td><td style="color:#6A1B9A">12</td>
+  <td class="bold">59</td><td>2.0%</td>
+  <td class="left" style="font-size:11px">"세탁 맡기고 좀 지나서 확인했는데
+ 
+ 등쪽 로고 색이 다 바랬어요...
+ 
+ 카라쪽에 얼룩 생기거 지워달라고 했는데
+ 
+ 등"</td>
+</tr>
+
+<!-- 합계 -->
+<tr style="background:#EDE7F6;font-weight:700">
+  <td class="left">합계</td>
+  <td style="color:#6A1B9A">2,035</td><td style="color:#6A1B9A">887</td>
+  <td style="color:#6A1B9A">2,922</td><td>100%</td><td></td>
+</tr>
+</table>
+</div>
+
+
+<!-- ============================== -->
+<!-- 소주제 3: 일반문의 - 요금제 -->
+<!-- ============================== -->
+<div class="card-plain" style="border-left:4px solid #E65100;margin-bottom:16px">
+<h2 style="color:#BF360C;border-left:none;padding-left:0">&#128992; 소주제 #3 &#183; 일반문의 &#8212; 요금제 <span style="font-size:11px;font-weight:400;color:#888">목표: 0건 (앱 셀프 처리화)</span></h2>
+<div style="font-size:11px;color:#555;margin-bottom:12px">
+  분석 대상: &#128309;_결제/과금 &#183; &#128309;_요금제_해지 &#183; &#128309;_요금제_변경<br>
+  <strong>접근 방향:</strong> 운영 개선이 아닌 앱 내 셀프 처리화를 통해 VOC 자체를 차단한다
+</div>
+
+<div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+  <div style="flex:1;min-width:100px;background:#FBE9E7;border-radius:8px;padding:10px 12px;border:1px solid #FFAB91">
+    <div style="font-size:10px;color:#BF360C;font-weight:600">요금제 해지 South (누적)</div>
+    <div style="font-size:22px;font-weight:700;color:#BF360C">2,226건</div>
+    <div style="font-size:10px;color:#888">주 평균 79건 &#183; 7월2주 54건</div>
+  </div>
+  <div style="flex:1;min-width:100px;background:#FBE9E7;border-radius:8px;padding:10px 12px;border:1px solid #FFAB91">
+    <div style="font-size:10px;color:#BF360C;font-weight:600">요금제 해지 East (누적)</div>
+    <div style="font-size:22px;font-weight:700;color:#BF360C">1,258건</div>
+    <div style="font-size:10px;color:#888">주 평균 44건 &#183; 7월2주 36건</div>
+  </div>
+  <div style="flex:1;min-width:100px;background:#FFF3E0;border-radius:8px;padding:10px 12px;border:1px solid #FFCC02">
+    <div style="font-size:10px;color:#E65100;font-weight:600">결제/과금 합계 (누적)</div>
+    <div style="font-size:22px;font-weight:700;color:#E65100">2,636건</div>
+    <div style="font-size:10px;color:#888">S: 1451건 / E: 1185건</div>
+  </div>
+  <div style="flex:1;min-width:100px;background:#FFF3E0;border-radius:8px;padding:10px 12px;border:1px solid #FFCC02">
+    <div style="font-size:10px;color:#E65100;font-weight:600">해지 비중 / 전체 요금제</div>
+    <div style="font-size:22px;font-weight:700;color:#E65100">53%</div>
+    <div style="font-size:10px;color:#888">전체 요금제 VOC 6,623건 중</div>
+  </div>
+</div>
+
+<div style="font-size:11px;font-weight:600;color:#333;margin-bottom:4px">주차별 건수 추이 (해지 South/East &#183; 결제 South/East)</div>
+<div style="overflow-x:auto">
+<canvas id="chart_yomje" width="840" height="220" style="display:block;min-width:840px"></canvas>
+</div>
+
+<div style="margin-top:14px">
+<div style="font-size:11px;font-weight:700;color:#333;margin-bottom:6px">항목별 누적 및 앱 개선 과제</div>
+<table style="font-size:11px">
+<tr><th style="text-align:left">항목</th><th>South 누적</th><th>East 누적</th><th>합계</th><th style="text-align:left">실제 문의 패턴 / 앱 개선 포인트</th></tr>
+<tr><td class="left">&#128309;_요금제_해지</td><td class="bold" style="color:#C62828">2,226</td><td class="bold" style="color:#C62828">1,258</td><td class="bold" style="color:#C62828">3,484</td><td class="left">앱 해지 메뉴 존재하나 이전 요금제 혼재 시 비활성화. 즉시 해지 플로우 단순화 필요</td></tr>
+<tr style="background:#FAFAFA"><td class="left">&#128309;_결제/과금</td><td>1,451</td><td>1,185</td><td class="bold">2,636</td><td class="left">세탁물 무게 과금 이의, 배송 지연 시 환불 기준 불명확 — 앱 내 과금 산정 근거 노출 필요</td></tr>
+<tr><td class="left">&#128309;_요금제_변경</td><td>346</td><td>157</td><td class="bold">503</td><td class="left">구독 플랜 전환 기능 앱 내 미비 — 플랜 변경 메뉴 추가 필요</td></tr>
+<tr style="background:#FFF3E0"><td class="left" style="font-weight:700">합계</td><td style="font-weight:700">4,023</td><td style="font-weight:700">2,600</td><td style="font-weight:700;color:#BF360C">6,623</td><td class="left">앱 셀프 처리화 시 VOC 전량 차단 가능</td></tr>
+</table>
+</div>
+
+<div class="note note-warn" style="margin-top:12px">
+  <strong>구조적 문제:</strong>
+  요금제 해지 VOC(3,484건)는 전체 요금제 VOC의 53%를 차지한다.
+  실제 문의 내용은 "앱에서 해지가 안 된다", "자동결제 됐는데 환불해달라", "이전 요금제 구조에서 해지가 막혀 있다" 등으로
+  앱 기능 완성도의 문제다. CS가 수작업으로 처리하고 있는 구조다.<br>
+  <strong>5월3주 South에서 해지 181건 이상 급등</strong>이 발생했으나 당시 분석 기록이 없다.
+  동일 시점 쿠폰 VOC도 급등(S 63건+미적용 36건)했다. 해당 주 정책 변경 또는 이벤트 내용을 소급 분석해야 한다.
+</div>
+</div>
+
+
+
+<!-- 일반문의-요금제 전수분析 결과 -->
+<div class="card-plain" style="border-left:4px solid #E65100;margin-bottom:16px;margin-top:20px">
+<h2 style="color:#E65100;border-left:none;padding-left:0">&#128992; 소주제 #3 심층 &middot; 일반문의-요금제 전수분析 결과 <span style="font-size:11px;font-weight:400;color:#555">1,998건 &middot; South CS 기반 분류 &middot; 목표: 앱 셀프서비스 전환으로 VOC 0건</span></h2>
+<div style="font-size:11px;color:#666;background:#FFF3E0;border:1px solid #FFCC80;border-radius:6px;padding:8px 12px;margin-bottom:14px">
+  <strong>분析 방법:</strong> 일반_raw에서 <code>결제/과금</code> &middot; <code>요금제_해지</code> &middot; <code>요금제_변경</code> 태그 행 1,998건을 추출하고 문의내용 전수 분류.
+  이 카테고리는 <strong>본질적으로 앱 내에서 자기해결 가능해야 하는 문의</strong>로, CS 문의 자체가 제품 설계 실패를 의미한다.
+  목표는 CS 문의 근절이며, 그 수단은 앱 셀프서비스 완성이다.
+</div>
+<div style="font-size:12px;font-weight:700;color:#333;margin-bottom:8px;padding:6px 0;border-bottom:2px solid #FFCC80">&#128204; 유형별 전체 건수 및 앱 셀프서비스 가능 여부 분류</div>
+<table style="font-size:11.5px;margin-bottom:16px">
+<tr>
+  <th style="text-align:left;width:32%">유형</th>
+  <th>건수</th><th>비중</th><th style="text-align:center">앱 대응</th><th style="text-align:left;width:35%">주요 고객 발화 / 문제 원인</th>
+</tr>
+<tr style="background:#FFF3E0">
+  <td class="left" colspan="5" style="font-size:11px;font-weight:700;color:#E65100;padding:4px 6px">&#9654; 요금제 해지 (1,045건 / 52.3%)</td>
+</tr>
+<tr>
+  <td class="left"><strong>해지_환불동반</strong></td>
+  <td class="bold" style="color:#C62828">498</td><td>24.9%</td>
+  <td style="text-align:center;color:#E65100">&#9888; 부분가능</td>
+  <td class="left">"&quot;해지하고 결제된 거 환불해주세요&quot; — 해지는 앱 가능, 환불 CS 개입 필요"</td>
+</tr>
+<tr>
+  <td class="left"><strong>해지_일반</strong></td>
+  <td class="bold" style="color:#C62828">448</td><td>22.4%</td>
+  <td style="text-align:center;color:#4CAF50">&#10003; 앱가능</td>
+  <td class="left">"&quot;해지하고 싶어요&quot;, &quot;구독 취소 방법&quot; — 앱에서 해결 가능하지만 UI 못 찾음"</td>
+</tr>
+<tr>
+  <td class="left">해지_즉시해지_앱부재 <span style="color:#C62828">★</span></td>
+  <td class="bold" style="color:#333">48</td><td>2.4%</td>
+  <td style="text-align:center;color:#C62828">&#10007; 앱불가</td>
+  <td class="left">"&quot;어플에는 즉시 해지가 없어서요&quot; — 앱 기능 부재"</td>
+</tr>
+<tr>
+  <td class="left">해지_자동결제</td>
+  <td class="bold" style="color:#333">51</td><td>2.6%</td>
+  <td style="text-align:center;color:#4CAF50">&#10003; 앱가능</td>
+  <td class="left">"&quot;자동결제 해지 방법&quot; — 앱 기능 있으나 UI 위치를 못 찾음"</td>
+</tr>
+<tr style="background:#FFF3E0">
+  <td class="left" colspan="5" style="font-size:11px;font-weight:700;color:#E65100;padding:4px 6px">&#9654; 결제/과금 (848건 / 42.4%)</td>
+</tr>
+<tr>
+  <td class="left"><strong>결제_일반</strong></td>
+  <td class="bold" style="color:#C62828">654</td><td>32.7%</td>
+  <td style="text-align:center;color:#FF9800">&#9651; 강화필요</td>
+  <td class="left">"결제 관련 일반 문의 — 앱 내 결제 정보 가시성 강화로 흡수 가능"</td>
+</tr>
+<tr>
+  <td class="left">결제_내역확인</td>
+  <td class="bold" style="color:#333">51</td><td>2.6%</td>
+  <td style="text-align:center;color:#4CAF50">&#10003; 앱가능</td>
+  <td class="left">"&quot;영수증 확인하고 싶어요&quot;, &quot;이용 내역이요&quot; — 앱 마이페이지에서 제공 중이나 접근성 낮음"</td>
+</tr>
+<tr>
+  <td class="left">결제_환불요청</td>
+  <td class="bold" style="color:#333">78</td><td>3.9%</td>
+  <td style="text-align:center;color:#C62828">&#10007; CS필수</td>
+  <td class="left">"환불 자체는 CS 처리 필요 — 명확한 취소/환불 정책 안내로 문의 감소 가능"</td>
+</tr>
+<tr>
+  <td class="left">결제_오과금 <span style="color:#C62828">★</span></td>
+  <td class="bold" style="color:#333">14</td><td>0.7%</td>
+  <td style="text-align:center;color:#C62828">&#10007; 시스템오류</td>
+  <td class="left">"&quot;왜 이중 결제됐나요&quot; — 시스템/UI 오류, 방치 불가"</td>
+</tr>
+<tr style="background:#FFF3E0">
+  <td class="left" colspan="5" style="font-size:11px;font-weight:700;color:#E65100;padding:4px 6px">&#9654; 요금제 변경 (156건 / 7.8%)</td>
+</tr>
+<tr>
+  <td class="left">변경_방법문의</td>
+  <td class="bold" style="color:#C62828">148</td><td>7.4%</td>
+  <td style="text-align:center;color:#FF9800">&#9651; 강화필요</td>
+  <td class="left">"&quot;요금제 변경 어떻게 하나요&quot; — 앱 변경은 다음 결제일 적용으로 즉시 변경 불가"</td>
+</tr>
+<tr>
+  <td class="left">변경_업/다운그레이드 + 일시정지</td>
+  <td class="bold" style="color:#333">8</td><td>0.4%</td>
+  <td style="text-align:center;color:#C62828">&#10007; 부분불가</td>
+  <td class="left">"일시정지 기능 미제공 — 여행/미이용 기간 중 결제 발생 → 해지 후 재가입으로 이어짐"</td>
+</tr>
+<tr style="background:#FFF3E0;font-weight:700">
+  <td class="left">합계</td>
+  <td style="color:#E65100">1,998</td><td>100%</td><td></td><td></td>
+</tr>
+</table>
+<div style="font-size:12px;font-weight:700;color:#333;margin-bottom:8px;padding:6px 0;border-bottom:2px solid #FFCC80">&#128204; 앱 셀프서비스 전환 가능 분析</div>
+<table style="font-size:11px;margin-bottom:16px">
+<tr><th style="text-align:left">구분</th><th>건수</th><th>비중</th><th style="text-align:left">필요 조치</th></tr>
+<tr style="background:#E8F5E9">
+  <td class="left"><strong>앱에서 이미 가능 (UX 개선만 필요)</strong></td>
+  <td class="bold" style="color:#2E7D32">550</td><td style="color:#2E7D32"><strong>27.5%</strong></td>
+  <td class="left">앱 UI/UX 개선: 해지 버튼 가시성 ↑, 내역 접근성 ↑, FAQ 강화</td>
+</tr>
+<tr>
+  <td class="left">CS 처리 필요 (환불/오과금)</td>
+  <td class="bold" style="color:#C62828">140</td><td style="color:#C62828">7.0%</td>
+  <td class="left">환불정책 명확화 + 오과금 시스템 개선 선행 필요</td>
+</tr>
+<tr style="background:#FFF3E0">
+  <td class="left">앱 기능 강화로 흡수 가능</td>
+  <td class="bold">810</td><td>40.5%</td>
+  <td class="left">결제 정보 가시성 ↑, 변경 즉시 적용 기능 추가, 일시정지 기능 도입</td>
+</tr>
+<tr>
+  <td class="left">해지 후 환불 (부분 자동화 가능)</td>
+  <td class="bold">498</td><td>24.9%</td>
+  <td class="left">해지 플로우 내 환불 자동화 → CS 콜 절감</td>
+</tr>
+</table>
+</div>
+
+
+<!-- ============================== -->
+<!-- 소주제 4: 일반문의 - 쿠폰 -->
+<!-- ============================== -->
+<div class="card-plain" style="border-left:4px solid #1565C0;margin-bottom:16px">
+<h2 style="color:#0D47A1;border-left:none;padding-left:0">&#128308; 소주제 #4 &#183; 일반문의 &#8212; 쿠폰 <span style="font-size:11px;font-weight:400;color:#888">목표: 반복 유형 구조적 차단</span></h2>
+<div style="font-size:11px;color:#555;margin-bottom:12px">분석 대상: &#128309;_쿠폰 &#183; &#128309;_쿠폰_미적용 &#183; &#128309;_쿠폰_변경요청</div>
+
+<div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+  <div style="flex:1;min-width:100px;background:#E3F2FD;border-radius:8px;padding:10px 12px;border:1px solid #90CAF9">
+    <div style="font-size:10px;color:#0D47A1;font-weight:600">쿠폰 South (누적)</div>
+    <div style="font-size:20px;font-weight:700;color:#0D47A1">654건</div>
+    <div style="font-size:10px;color:#888">7월2주: 14건</div>
+  </div>
+  <div style="flex:1;min-width:100px;background:#E3F2FD;border-radius:8px;padding:10px 12px;border:1px solid #90CAF9">
+    <div style="font-size:10px;color:#0D47A1;font-weight:600">쿠폰 East (누적)</div>
+    <div style="font-size:20px;font-weight:700;color:#0D47A1">258건</div>
+    <div style="font-size:10px;color:#888">7월2주: 7건</div>
+  </div>
+  <div style="flex:1;min-width:100px;background:#E8EAF6;border-radius:8px;padding:10px 12px;border:1px solid #9FA8DA">
+    <div style="font-size:10px;color:#283593;font-weight:600">쿠폰_미적용 합계 (누적)</div>
+    <div style="font-size:20px;font-weight:700;color:#283593">801건</div>
+    <div style="font-size:10px;color:#888">S: 478건 / E: 323건</div>
+  </div>
+  <div style="flex:1;min-width:100px;background:#E8EAF6;border-radius:8px;padding:10px 12px;border:1px solid #9FA8DA">
+    <div style="font-size:10px;color:#283593;font-weight:600">전체 쿠폰 VOC (누적)</div>
+    <div style="font-size:20px;font-weight:700;color:#283593">1,926건</div>
+    <div style="font-size:10px;color:#888">주 평균 68건</div>
+  </div>
+</div>
+
+<div style="font-size:11px;font-weight:600;color:#333;margin-bottom:4px">주차별 건수 추이 (쿠폰+미적용 &#183; South/East)</div>
+<div style="overflow-x:auto">
+<canvas id="chart_coupon" width="840" height="200" style="display:block;min-width:840px"></canvas>
+</div>
+
+<div style="margin-top:14px">
+<div style="font-size:11px;font-weight:700;color:#333;margin-bottom:6px">쿠폰 VOC 유형 및 개선 과제</div>
+<table style="font-size:11px">
+<tr><th style="text-align:left">항목</th><th>S 누적</th><th>E 누적</th><th>합계</th><th style="text-align:left">실제 문의 패턴 / 개선 방향</th></tr>
+<tr><td class="left">&#128309;_쿠폰 (일반)</td><td>654</td><td>258</td><td class="bold">912</td><td class="left">중복 사용 불가 정책 미인지 / 세탁 지연으로 쿠폰 기간 만료 — 정책 안내 앱 내 강화</td></tr>
+<tr style="background:#FAFAFA"><td class="left">&#128309;_쿠폰_미적용</td><td>478</td><td>323</td><td class="bold">801</td><td class="left">쿠폰 선택/변경 UI 동작 불가 / 특가 기간 설정 불명확 — 쿠폰 적용 버튼 UX 즉시 개선</td></tr>
+<tr><td class="left">&#128309;_쿠폰_변경요청</td><td>139</td><td>74</td><td class="bold">213</td><td class="left">신청 후 쿠폰 변경 기능 앱 내 부재 — 신청 전 쿠폰 변경 메뉴 추가 필요</td></tr>
+<tr style="background:#E3F2FD"><td class="left" style="font-weight:700">합계</td><td style="font-weight:700">1,271</td><td style="font-weight:700">655</td><td style="font-weight:700;color:#0D47A1">1,926</td><td class="left">앱 UX 개선만으로 대부분 차단 가능</td></tr>
+</table>
+</div>
+
+<div class="note" style="margin-top:12px;border-left-color:#1565C0">
+  <strong>구조적 이슈 3가지:</strong>
+  ① 쿠폰이 적용되지 않는 버튼/화면(미적용 801건),
+  ② 중복 사용 불가 정책이 주문 시점에 미노출,
+  ③ 신청 후 쿠폰 변경 불가(213건).
+  이 세 가지만 개선해도 쿠폰 VOC의 70% 이상을 구조적으로 차단할 수 있다.<br>
+  <strong>5월3주 South 쿠폰(63건)+미적용(36건) 동시 급등</strong>은 해당 주 특정 이벤트/정책과 직결된다.
+  이벤트 발행 전 앱 UX 검토 체크리스트를 의무화하지 않으면 동일 패턴이 반복될 것이다.
+</div>
+</div>
+
+
+
+<!-- 일반문의-쿠폰 전수분析 결과 -->
+<div class="card-plain" style="border-left:4px solid #1565C0;margin-bottom:16px;margin-top:20px">
+<h2 style="color:#1565C0;border-left:none;padding-left:0">&#128994; 소주제 #4 심층 &middot; 일반문의-쿠폰 전수분析 결과 <span style="font-size:11px;font-weight:400;color:#555">2,028건 &middot; E+S 합산 &middot; 목표: 반복 패턴 차단으로 VOC 0건</span></h2>
+<div style="font-size:11px;color:#666;background:#E3F2FD;border:1px solid #90CAF9;border-radius:6px;padding:8px 12px;margin-bottom:14px">
+  <strong>분析 방법:</strong> South_품질_raw + East_품질_raw 합산으로 전체 E+S 규모 파악 (2,028건) 후, 일반_raw의 쿠폰 관련 606건 문의내용을 전수 분류하여 유형별 패턴 도출.
+  쿠폰 문의는 <strong>반복적·예측 가능한 패턴</strong>이 명확하여, 사전 차단과 앱 내 안내 강화로 VOC 0건 달성이 가능한 영역이다.
+</div>
+<div style="font-size:12px;font-weight:700;color:#333;margin-bottom:8px;padding:6px 0;border-bottom:2px solid #90CAF9">&#128204; South vs East 규모 비교 (1월~7월3주)</div>
+<table style="font-size:11.5px;margin-bottom:16px">
+<tr>
+  <th style="text-align:left">카테고리</th><th>South</th><th>East</th><th>E+S 합계</th>
+  <th style="text-align:left">주요 쟁점</th>
+</tr>
+<tr>
+  <td class="left"><strong>&#128305;_쿠폰</strong> (일반 쿠폰 문의)</td>
+  <td class="bold" style="color:#1565C0">668</td><td>268</td><td class="bold">936</td>
+  <td class="left">미지급, 사용방법, 유효기간, 중복사용 등</td>
+</tr>
+<tr style="background:#E8F0FE">
+  <td class="left"><strong>&#128305;_쿠폰_미적용</strong></td>
+  <td class="bold" style="color:#1565C0">520</td><td>345</td><td class="bold">865</td>
+  <td class="left">앱에서 쿠폰 눌렀는데 반영 안 됨 / 조건 미충족인데 불명확</td>
+</tr>
+<tr>
+  <td class="left"><strong>&#128305;_쿠폰_변경요청</strong></td>
+  <td class="bold" style="color:#1565C0">147</td><td>80</td><td class="bold">227</td>
+  <td class="left">유효기간 연장, 다른 쿠폰으로 교체 요청</td>
+</tr>
+<tr style="background:#E3F2FD;font-weight:700">
+  <td class="left">합계</td>
+  <td style="color:#1565C0">1,335</td><td>693</td><td style="color:#1565C0">2,028</td><td></td>
+</tr>
+</table>
+<div style="font-size:12px;font-weight:700;color:#333;margin-bottom:8px;padding:6px 0;border-bottom:2px solid #90CAF9">&#128204; 유형별 상세 분류 (문의내용 전수 分析, 606건)</div>
+<table style="font-size:11.5px;margin-bottom:16px">
+<tr>
+  <th style="text-align:left;width:35%">유형</th><th>건수</th><th>비중</th>
+  <th style="text-align:center">차단 가능</th><th style="text-align:left;width:30%">주요 고객 발화 패턴</th>
+</tr>
+<tr style="background:#E8F0FE">
+  <td class="left" colspan="5" style="font-size:11px;font-weight:700;color:#1565C0;padding:4px 6px">&#9654; 쿠폰 미적용 (239건 / 39.4%)</td>
+</tr>
+<tr>
+  <td class="left">미적용_기타 (조건미충족 등)</td>
+  <td class="bold" style="color:#1565C0">188</td><td>31.0%</td>
+  <td style="text-align:center;color:#FF9800">&#9651; 안내강화</td>
+  <td class="left">"우주패스로 운동화세탁권 생겨서 세탁했는데
+ 
+ 
+ 
+ 배보다 배꼽이 더 크네요.
+ 
+ 
+ 
+ 이럴거면 집앞 크린토피아에 맡기는게 낫죠
+ 
+ 
+ "</td>
+</tr>
+<tr>
+  <td class="left"><strong>미적용_적용오류 <span style="color:#C62828">★</span></strong></td>
+  <td class="bold" style="color:#1565C0">31</td><td>5.1%</td>
+  <td style="text-align:center;color:#C62828">&#10007; 시스템 버그</td>
+  <td class="left">"&quot;쿠폰 눌렀는데 결제에 안 반영됐어요&quot;, &quot;결제 후 쿠폰 사용 불가&quot;"</td>
+</tr>
+<tr>
+  <td class="left">미적용_사용방법모름</td>
+  <td class="bold" style="color:#1565C0">13</td><td>2.1%</td>
+  <td style="text-align:center;color:#4CAF50">&#10003; 앱 안내</td>
+  <td class="left">"첫 거래가 좋은 경험으로 이루어져야 계속해서 이용이 가능할거 같은데 해당부분이 좀 아쉬운거 같습니다 쿠폰 설정이 안되면 돈을 다 지불해야하는건가"</td>
+</tr>
+<tr>
+  <td class="left">미적용_쿠폰만료</td>
+  <td class="bold" style="color:#1565C0">7</td><td>1.2%</td>
+  <td style="text-align:center;color:#4CAF50">&#10003; 사전알림</td>
+  <td class="left">"&quot;쿠폰 기간 지났는데 몰랐어요&quot; — 만료 7일전 푸시로 차단 가능"</td>
+</tr>
+<tr style="background:#E8F0FE">
+  <td class="left" colspan="5" style="font-size:11px;font-weight:700;color:#1565C0;padding:4px 6px">&#9654; 일반 쿠폰 문의 (367건 / 60.6%)</td>
+</tr>
+<tr>
+  <td class="left">쿠폰_일반문의</td>
+  <td class="bold" style="color:#1565C0">301</td><td>49.7%</td>
+  <td style="text-align:center;color:#FF9800">&#9651; 앱 가시성</td>
+  <td class="left">"다양한 쿠폰 관련 일반 문의 — 앱 내 쿠폰 상태 투명성 강화로 흡수 가능"</td>
+</tr>
+<tr>
+  <td class="left"><strong>쿠폰_미지급 <span style="color:#C62828">★</span></strong></td>
+  <td class="bold" style="color:#1565C0">4</td><td>0.7%</td>
+  <td style="text-align:center;color:#C62828">&#10007; CS필수</td>
+  <td class="left">"&quot;쿠폰 왜 안 왔나요&quot; — 발급 기준/시점 불명확"</td>
+</tr>
+<tr>
+  <td class="left">쿠폰_사용방법문의</td>
+  <td class="bold" style="color:#1565C0">3</td><td>0.5%</td>
+  <td style="text-align:center;color:#4CAF50">&#10003; 앱 안내</td>
+  <td class="left">"첨 사용이라 궁금하네요. 아들신발 세탁을 맡기려고 하는데 언제 수거하고 결제는 어찌되는지. 그리고 쿠폰사용방법과 수거비용은 어찌 될까요"</td>
+</tr>
+
+<tr>
+  <td class="left">쿠폰_변경요청</td>
+  <td class="bold" style="color:#1565C0">59</td><td>9.7%</td>
+  <td style="text-align:center;color:#C62828">&#10007; CS필수</td>
+  <td class="left">"유효기간 연장 요청 등 — 정책 변경 없이는 CS 처리 필요"</td>
+</tr>
+<tr style="background:#E3F2FD;font-weight:700">
+  <td class="left">합계</td>
+  <td style="color:#1565C0">606</td><td>100%</td><td></td><td></td>
+</tr>
+</table>
+</div>
+
+
+</div><!-- end section-group -->
+
+<script>
+(function() {
+var weeks = ["1\uc6d41\uc8fc", "1\uc6d42\uc8fc", "1\uc6d43\uc8fc", "1\uc6d44\uc8fc", "1\uc6d45\uc8fc", "2\uc6d41\uc8fc", "2\uc6d42\uc8fc", "2\uc6d43\uc8fc", "2\uc6d44\uc8fc", "3\uc6d41\uc8fc", "3\uc6d42\uc8fc", "3\uc6d43\uc8fc", "3\uc6d44\uc8fc", "4\uc6d41\uc8fc", "4\uc6d42\uc8fc", "4\uc6d43\uc8fc", "4\uc6d44\uc8fc", "4\uc6d45\uc8fc", "5\uc6d41\uc8fc", "5\uc6d42\uc8fc", "5\uc6d43\uc8fc", "5\uc6d44\uc8fc", "6\uc6d41\uc8fc", "6\uc6d42\uc8fc", "6\uc6d43\uc8fc", "6\uc6d44\uc8fc", "7\uc6d41\uc8fc", "7\uc6d42\uc8fc", "7\uc6d43\uc8fc"];
+var months = ['1월','2월','3월','4월','5월','6월','7월'];
+var monthStarts = [0,5,9,13,18,22,26];
+
+function drawChart(id, datasets, maxOverride) {
+  var canvas = document.getElementById(id);
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W = canvas.width, H = canvas.height;
+  var PL=42, PR=10, PT=18, PB=50;
+  var cW = W-PL-PR, cH = H-PT-PB;
+  var n = weeks.length, nb = datasets.length;
+  var gW = cW/n;
+  var bW = Math.max(5, Math.floor(gW*0.85/nb));
+  var bgap = (gW - bW*nb)/(nb+1);
+
+  var maxV = maxOverride||0;
+  if (!maxOverride) datasets.forEach(function(d){d.data.forEach(function(v){if(v>maxV)maxV=v;});});
+  maxV = Math.ceil(maxV*1.18/10)*10 || 10;
+
+  ctx.clearRect(0,0,W,H);
+
+  // grid
+  for (var gi=0;gi<=5;gi++) {
+    var gy = PT+cH-(gi/5)*cH;
+    ctx.strokeStyle='#EEEEEE'; ctx.lineWidth=0.8;
+    ctx.beginPath(); ctx.moveTo(PL,gy); ctx.lineTo(W-PR,gy); ctx.stroke();
+    ctx.fillStyle='#999'; ctx.font='9px sans-serif'; ctx.textAlign='right';
+    ctx.fillText(Math.round(gi/5*maxV), PL-3, gy+3);
+  }
+
+  // month dividers
+  monthStarts.forEach(function(si,mi) {
+    var mx = PL+si*gW;
+    ctx.strokeStyle='#BDBDBD'; ctx.lineWidth=0.8;
+    ctx.setLineDash([3,3]);
+    ctx.beginPath(); ctx.moveTo(mx,PT); ctx.lineTo(mx,PT+cH); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle='#555'; ctx.font='bold 9px sans-serif'; ctx.textAlign='left';
+    ctx.fillText(months[mi], mx+2, PT-5);
+  });
+
+  // bars
+  datasets.forEach(function(ds,di) {
+    ctx.fillStyle = ds.color;
+    ds.data.forEach(function(v,i) {
+      var bx = PL + i*gW + bgap + di*(bW+1);
+      var bh = v/maxV*cH;
+      var by = PT+cH-bh;
+      ctx.fillRect(Math.round(bx), Math.round(by), bW, Math.ceil(bh));
+      if (v>0 && bh>12) {
+        ctx.fillStyle=ds.color;
+        ctx.font='7px sans-serif'; ctx.textAlign='center';
+        ctx.fillText(v, Math.round(bx+bW/2), Math.round(by-1));
+      }
+    });
+  });
+
+  // week numbers on x-axis
+  ctx.fillStyle='#666'; ctx.font='8px sans-serif'; ctx.textAlign='center';
+  weeks.forEach(function(w,i) {
+    var wx = PL+i*gW+gW/2;
+    var wn = w.replace(/[0-9]+월/,'').replace('주','');
+    ctx.fillText(wn+'주', wx, PT+cH+10);
+  });
+
+  // legend
+  var lx=PL, ly=H-12;
+  datasets.forEach(function(ds) {
+    ctx.fillStyle=ds.color; ctx.fillRect(lx,ly-7,10,8);
+    ctx.fillStyle='#333'; ctx.font='9px sans-serif'; ctx.textAlign='left';
+    ctx.fillText(ds.label, lx+13, ly);
+    lx += ctx.measureText(ds.label).width+26;
+  });
+}
+
+drawChart('chart_bunshil', [
+  {label:'분실 South', color:'#1565C0', data:[23, 50, 83, 47, 77, 53, 45, 48, 51, 87, 45, 37, 71, 78, 99, 107, 87, 81, 60, 63, 76, 44, 48, 39, 39, 54, 40, 41, 38]},
+  {label:'분실 East',  color:'#F57C00', data:[29, 29, 31, 24, 36, 29, 43, 22, 30, 40, 48, 48, 46, 53, 51, 48, 41, 38, 17, 22, 28, 33, 27, 29, 33, 29, 32, 23, 13]},
+  {label:'타인세탁물 South', color:'#7B1FA2', data:[2, 8, 17, 13, 10, 12, 12, 9, 15, 15, 14, 20, 15, 25, 33, 35, 30, 26, 16, 4, 46, 16, 13, 8, 9, 13, 12, 7, 16]},
+  {label:'타인세탁물 East', color:'#C62828', data:[7, 12, 7, 8, 11, 7, 5, 4, 7, 10, 20, 6, 10, 18, 13, 13, 20, 14, 13, 13, 16, 18, 4, 11, 12, 13, 8, 6, 12]}
+]);
+
+drawChart('chart_byungform', [
+  {label:'변형/손상 South', color:'#4527A0', data:[79, 92, 85, 56, 80, 79, 73, 51, 73, 89, 70, 63, 67, 73, 76, 99, 42, 30, 59, 63, 102, 72, 42, 53, 46, 52, 45, 43, 57]},
+  {label:'변형/손상 East',  color:'#AD1457', data:[31, 39, 39, 41, 31, 24, 28, 21, 18, 31, 25, 32, 31, 40, 46, 39, 29, 35, 22, 22, 23, 23, 24, 30, 13, 38, 26, 19, 24]}
+]);
+
+drawChart('chart_yomje', [
+  {label:'해지 South', color:'#BF360C', data:[33, 77, 56, 60, 65, 63, 66, 50, 65, 61, 68, 81, 93, 104, 104, 87, 101, 98, 87, 90, 181, 105, 102, 71, 72, 69, 63, 54, 44]},
+  {label:'해지 East',  color:'#F57C00', data:[42, 33, 33, 38, 27, 29, 29, 21, 37, 29, 39, 49, 38, 51, 50, 50, 58, 68, 54, 79, 60, 66, 43, 57, 47, 58, 37, 36, 27]},
+  {label:'결제/과금 South', color:'#1565C0', data:[29, 72, 47, 53, 73, 64, 61, 28, 64, 33, 54, 58, 62, 39, 60, 70, 67, 55, 44, 65, 87, 44, 40, 35, 33, 27, 49, 38, 54]},
+  {label:'결제/과금 East',  color:'#0097A7', data:[45, 27, 37, 37, 28, 40, 34, 30, 57, 33, 58, 54, 79, 67, 77, 50, 47, 45, 31, 29, 20, 29, 32, 43, 37, 43, 42, 34, 35]}
+], 200);
+
+drawChart('chart_coupon', [
+  {label:'쿠폰 South', color:'#1565C0', data:[13, 16, 16, 18, 13, 6, 33, 22, 18, 21, 28, 26, 28, 18, 32, 11, 11, 18, 17, 10, 63, 54, 40, 29, 20, 24, 35, 14, 14]},
+  {label:'쿠폰 East',  color:'#F57C00', data:[8, 4, 3, 9, 5, 9, 15, 4, 14, 7, 2, 9, 12, 11, 10, 4, 5, 13, 6, 9, 18, 13, 16, 5, 16, 14, 10, 7, 8]},
+  {label:'미적용 South', color:'#283593', data:[1, 10, 14, 8, 14, 11, 8, 1, 17, 21, 22, 22, 20, 28, 42, 6, 18, 17, 11, 13, 36, 11, 23, 17, 19, 32, 21, 15, 42]},
+  {label:'미적용 East',  color:'#E65100', data:[7, 8, 7, 8, 12, 3, 7, 5, 16, 11, 10, 24, 18, 12, 11, 10, 10, 10, 10, 9, 15, 24, 16, 12, 10, 15, 16, 7, 21]}
+]);
+
+})();
+</script>
+
+
+</div></body></html>
